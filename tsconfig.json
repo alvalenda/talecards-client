@@ -16,10 +16,10 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "baseUrl": ".",
+    "types": ["node"],
     "paths": {
-      "@": ["src/"],
-      "@/*": ["src/*"],
-      "@/shared/*": ["src/components/shared/*"]
+      "@/*": ["./src/*"],
+      "@shared/*": ["./src/components/shared/*"]
     }
   },
   "include": ["src"],
