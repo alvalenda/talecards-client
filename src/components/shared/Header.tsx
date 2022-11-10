@@ -1,5 +1,7 @@
-type Props = {};
+interface HeaderProps {
+  name: string;
+}
 
-export const Header = ({}: Props) => {
-  return <div>Header</div>;
+export const Header = ({ name }: HeaderProps): JSX.Element => {
+  return <div>Hi {name}</div>;
 };
