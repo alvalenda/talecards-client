@@ -9,12 +9,13 @@ const StyledButton = styled.button`
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #aeaeae;
+  background-color: ${(props) => props.theme.colors.buttonPrimary};
+  color: ${(props) => props.theme.colors.buttonPrimaryText};
   cursor: pointer;
   transition: border-color 0.25s;
 
   &:hover {
-    border-color: #646cff;
+    border-color: ${(props) => props.theme.colors.primary};
   }
 
   &:focus,
