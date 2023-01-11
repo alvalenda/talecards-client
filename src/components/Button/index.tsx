@@ -1,6 +1,9 @@
 import styled from 'styled-components'
 
-type Props = {}
+type Props = {
+  children?: React.ReactNode
+  handleClick?: () => void
+}
 
 const StyledButton = styled.button`
   border-radius: 8px;
@@ -29,6 +32,11 @@ const StyledButton = styled.button`
     }
   }
 `
-export default function Button({}: Props) {
-  return <StyledButton>Button</StyledButton>
+export default function Button({
+  children = 'Button',
+  handleClick = () => {
+    console.log('Clicked')
+  },
+}: Props) {
+  return <StyledButton onClick={handleClick}>{children}</StyledButton>
 }
