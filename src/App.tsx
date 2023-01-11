@@ -1,24 +1,20 @@
-import { useState } from 'react'
+import { useContext } from 'react'
 import { ThemeProvider } from 'styled-components'
 import './App.css'
 import Button from './components/Button'
+import ThemeButton from './components/ThemeButton'
 import { Title } from './components/Title'
-import { themeObject } from './shared/theme.config'
+import { TalespireContext } from './shared/contexts/talespire/TalespireContext'
+import type { TalespireAction } from './shared/contexts/talespire/TalespireReducer'
+import { themeObject } from './shared/theme/theme.config'
 
 function App() {
-  const [darkTheme, setDarkTheme] = useState(false)
-
-  const handleDarkMode = () => {
-    setDarkTheme(!darkTheme)
-  }
-
   return (
     <ThemeProvider theme={themeObject}>
       <div className="App">
         <Title />
-
-        <Button handleClick={handleDarkMode}>Toggle Dark Mode</Button>
         <Button>Faço Nada</Button>
+        <ThemeButton />
       </div>
     </ThemeProvider>
   )
