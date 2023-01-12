@@ -9,7 +9,7 @@ import type {
   TalespireAction,
   TalespireState,
 } from './shared/contexts/talespire/TalespireReducer'
-import { themeObject } from './shared/theme/theme.config'
+import { themeObject as theme } from './shared/theme/theme.config'
 
 function App() {
   const { darkMode } = useContext<{ darkMode: boolean }>(
@@ -20,50 +20,43 @@ function App() {
       theme={{
         colors: {
           primary: darkMode
-            ? themeObject.colors.primaryDark
-            : themeObject.colors.primaryLight,
+            ? theme.colors.primaryDark
+            : theme.colors.primaryLight,
 
           secondary: darkMode
-            ? themeObject.colors.secondaryDark
-            : themeObject.colors.secondaryLight,
+            ? theme.colors.secondaryDark
+            : theme.colors.secondaryLight,
 
           background: darkMode
-            ? themeObject.colors.backgroundDark
-            : themeObject.colors.backgroundLight,
+            ? theme.colors.backgroundDark
+            : theme.colors.backgroundLight,
 
           textPrimary: darkMode
-            ? themeObject.colors.textPrimaryDark
-            : themeObject.colors.textPrimaryLight,
+            ? theme.colors.textPrimaryDark
+            : theme.colors.textPrimaryLight,
 
           textSecondary: darkMode
-            ? themeObject.colors.textSecondaryDark
-            : themeObject.colors.textSecondaryLight,
+            ? theme.colors.textSecondaryDark
+            : theme.colors.textSecondaryLight,
 
           buttonPrimary: darkMode
-            ? themeObject.colors.buttonPrimaryDark
-            : themeObject.colors.buttonPrimaryLight,
+            ? theme.colors.buttonPrimaryDark
+            : theme.colors.buttonPrimaryLight,
 
           buttonSecondary: darkMode
-            ? themeObject.colors.buttonSecondaryDark
-            : themeObject.colors.buttonSecondaryLight,
+            ? theme.colors.buttonSecondaryDark
+            : theme.colors.buttonSecondaryLight,
 
-          buttonPrimaryText: darkMode
-            ? themeObject.colors.buttonTextPrimaryDark
-            : themeObject.colors.buttonTextPrimaryLight,
-
-          buttonSecondaryText: darkMode
-            ? themeObject.colors.buttonTextSecondaryDark
-            : themeObject.colors.buttonTextSecondaryLight,
-
-          buttonDisabled: themeObject.colors.buttonDisabled,
-          buttonDisabledText: themeObject.colors.buttonDisabledText,
+          buttonText: theme.colors.buttonText,
+          buttonDisabled: theme.colors.buttonDisabled,
+          buttonDisabledText: theme.colors.buttonTextDisabled,
         },
         fonts: {
-          ...themeObject.fonts,
+          ...theme.fonts,
         },
 
         fontSizes: {
-          ...themeObject.fontSizes,
+          ...theme.fontSizes,
         },
       }}
     >
