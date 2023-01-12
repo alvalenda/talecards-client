@@ -21,15 +21,11 @@ export const themeObject = {
     buttonSecondaryLight: '#ff0000',
     buttonSecondaryDark: '#ff00a0',
 
-    buttonTextPrimaryLight: '#fff',
-    buttonTextPrimaryDark: '#000',
-
-    buttonTextSecondaryLight: '#ddd',
-    buttonTextSecondaryDark: '#000',
-
+    buttonText: '#fff',
     buttonDisabled: '#ccc',
-    buttonDisabledText: '#fff',
+    buttonTextDisabled: '#fff',
   },
+
   fonts: {
     primary: 'Roboto, sans-serif',
     secondary: 'Roboto, sans-serif',
