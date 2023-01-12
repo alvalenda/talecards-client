@@ -27,13 +27,9 @@ function App() {
             ? theme.colors.backgroundDark
             : theme.colors.backgroundLight,
 
-          textPrimary: darkMode
-            ? theme.colors.textPrimaryDark
-            : theme.colors.textPrimaryLight,
-
-          textSecondary: darkMode
-            ? theme.colors.textSecondaryDark
-            : theme.colors.textSecondaryLight,
+          backgroundVar: darkMode
+            ? theme.colors.backgroundVarDark
+            : theme.colors.backgroundVarLight,
 
           buttonPrimary: darkMode
             ? theme.colors.buttonPrimaryDark
@@ -43,9 +39,17 @@ function App() {
             ? theme.colors.buttonSecondaryDark
             : theme.colors.buttonSecondaryLight,
 
+          interactive: darkMode
+            ? theme.colors.interactiveDark
+            : theme.colors.interactiveLight,
+
+          inlineError: darkMode
+            ? theme.colors.inlineErrorDark
+            : theme.colors.inlineErrorLight,
+
           buttonText: theme.colors.buttonText,
           buttonDisabled: theme.colors.buttonDisabled,
-          buttonDisabledText: theme.colors.buttonTextDisabled,
+          disabledText: theme.colors.disabledText,
         },
         fonts: {
           ...theme.fonts,
