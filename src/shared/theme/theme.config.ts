@@ -1,29 +1,32 @@
 export const themeObject = {
   colors: {
-    primaryLight: '#0070f3',
+    primaryLight: '#242424',
     primaryDark: '#fff',
 
-    secondaryLight: '#ff0000',
-    secondaryDark: '#fff',
+    secondaryLight: '#445a63',
+    secondaryDark: '#afbec4',
 
     backgroundLight: '#fff',
-    backgroundDark: '#000',
+    backgroundDark: '#242424',
 
-    textPrimaryLight: '#000',
-    textPrimaryDark: '#fff',
+    backgroundVarLight: '#d0d8dc',
+    backgroundVarDark: '#374850',
 
-    textSecondaryLight: '#123',
-    textSecondaryDark: '#cdf',
+    buttonPrimaryLight: '#242424',
+    buttonPrimaryDark: '#fff',
 
-    buttonPrimaryLight: '#0070f3',
-    buttonPrimaryDark: '#0075a1',
+    buttonSecondaryLight: '#445a63',
+    buttonSecondaryDark: '#afbec4',
 
-    buttonSecondaryLight: '#ff0000',
-    buttonSecondaryDark: '#ff00a0',
+    interactiveLight: '#026ebe',
+    interactiveDark: '#fff',
+
+    inlineErrorLight: '#c00300',
+    inlineErrorDark: '#fff',
 
     buttonText: '#fff',
     buttonDisabled: '#ccc',
-    buttonTextDisabled: '#fff',
+    disabledText: '#fff',
   },
 
   fonts: {
