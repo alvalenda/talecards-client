@@ -12,7 +12,7 @@ const StyledButton = styled.button`
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: ${(props) => props.theme.colors.buttonPrimary};
+  background-color: ${(props) => props.theme.colors.buttonSecondary};
   color: ${(props) => props.theme.colors.buttonPrimaryText};
   cursor: pointer;
   transition: border-color 0.25s;
