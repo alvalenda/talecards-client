@@ -1,14 +1,10 @@
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { ThemeProvider } from 'styled-components'
 import './App.css'
 import Button from './components/Button'
 import ThemeButton from './components/ThemeButton'
 import { Title } from './components/Title'
 import { TalespireContext } from './shared/contexts/talespire/TalespireContext'
-import type {
-  TalespireAction,
-  TalespireState,
-} from './shared/contexts/talespire/TalespireReducer'
 import { themeObject as theme } from './shared/theme/theme.config'
 
 function App() {
