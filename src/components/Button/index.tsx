@@ -7,7 +7,7 @@ type Props = {
 
 const StyledButton = styled.button`
   border-radius: 8px;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 0.3em 0.6em;
   font-size: ${(props) => props.theme.fontSizes.small};
   font-weight: 500;
@@ -15,15 +15,15 @@ const StyledButton = styled.button`
   background-color: ${(props) => props.theme.colors.buttonSecondary};
   color: ${(props) => props.theme.colors.buttonText};
   cursor: pointer;
-  transition: all 0.66s ease-in-out;
+  transition: background-color 0.66s ease-in-out, border-color 0.4s ease-in-out;
 
   &:hover {
-    border-color: ${(props) => props.theme.colors.buttonPrimary};
+    border-color: ${(props) => props.theme.colors.interactive};
   }
 
   &:focus,
   &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    border-color: ${(props) => props.theme.colors.interactive};
   }
 `
 export default function Button({

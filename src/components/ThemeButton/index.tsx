@@ -8,7 +8,7 @@ type Props = {}
 
 const StyledThemeButton = styled.button`
   border-radius: 50%;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   padding: 0;
   width: 2.4em;
   height: 2.4em;
@@ -16,7 +16,7 @@ const StyledThemeButton = styled.button`
   background-color: ${(props) => props.theme.colors.buttonPrimary};
   color: ${(props) => props.theme.colors.buttonText};
   cursor: pointer;
-  transition: all 0.66s ease-in-out;
+  transition: background-color 0.66s ease-in-out, border-color 0.4s ease-in-out;
 
   svg {
     vertical-align: middle;
@@ -24,12 +24,12 @@ const StyledThemeButton = styled.button`
   }
 
   &:hover {
-    border-color: ${(props) => props.theme.colors.primary};
+    border-color: ${(props) => props.theme.colors.interactive};
   }
 
   &:focus,
   &:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
+    border-color: ${(props) => props.theme.colors.interactive};
   }
 `
 export default function ThemeButton({}: Props) {
@@ -45,7 +45,11 @@ export default function ThemeButton({}: Props) {
 
   return (
     <StyledThemeButton onClick={handleDarkMode}>
-      {darkMode ? <MdDarkMode size={25} /> : <MdLightMode size={25} />}
+      {darkMode ? (
+        <MdLightMode size={25} color={'#242424'} />
+      ) : (
+        <MdDarkMode size={25} />
+      )}
     </StyledThemeButton>
   )
 }
