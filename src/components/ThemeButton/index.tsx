@@ -14,9 +14,9 @@ const StyledThemeButton = styled.button`
   height: 2.4em;
   font-size: 1em;
   background-color: ${(props) => props.theme.colors.buttonPrimary};
-  color: ${(props) => props.theme.colors.buttonPrimaryText};
+  color: ${(props) => props.theme.colors.buttonText};
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.66s ease-in-out;
 
   svg {
     vertical-align: middle;
