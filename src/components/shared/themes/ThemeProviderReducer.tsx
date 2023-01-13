@@ -22,7 +22,7 @@ export function ThemeProviderReducer({ children }: Props) {
           backgroundVar: darkMode ? '#374850' : '#d0d8dc',
 
           buttonPrimary: darkMode ? '#fff' : '#242424',
-          buttonSecondary: darkMode ? '#afbec4' : '#445a63',
+          buttonSecondary: darkMode ? '#242424' : '#fff',
 
           interactive: darkMode ? '#026ebe' : '#026ebe',
           inlineError: darkMode ? '#fff' : '#c00300',
