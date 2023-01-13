@@ -34,7 +34,7 @@ const getStyle = (darkMode: boolean) => {
         ? (props) => props.theme.colors.interactive
         : ''};
 
-      color: ${darkMode ? (props) => props.theme.colors.interactive : ''};
+      /* color: ${darkMode ? (props) => props.theme.colors.interactive : ''}; */
     }
   `
 }
