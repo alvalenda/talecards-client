@@ -7,7 +7,7 @@ type Props = {
   style?: 'primary' | 'secondary'
 }
 
-const returnStyle = (bType: string) => {
+const getStyle = (bType: string) => {
   return styled.button`
     border-radius: 8px;
     padding: 0.3em 0.6em;
@@ -52,7 +52,7 @@ export function Button({
   },
   style = 'primary',
 }: Props) {
-  const StyledButton = returnStyle(style)
+  const StyledButton = getStyle(style)
 
   return <StyledButton onClick={handleClick}>{children}</StyledButton>
 }
