@@ -5,7 +5,7 @@ import { Button } from '@/components/shared/Button'
 
 type Props = {}
 
-const ScreamWrapper = styled.section`
+const ScreenWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,11 +13,12 @@ const ScreamWrapper = styled.section`
   height: 100vh;
   width: 100vw;
   background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.primary};
 
   transition: background-color 0.8s ease-in;
 `
 
-const ButtonContainer = styled.div`
+const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   place-items: center;
@@ -27,14 +28,14 @@ const ButtonContainer = styled.div`
 
 export function Login({}: Props) {
   return (
-    <ScreamWrapper>
+    <ScreenWrapper>
       <Title />
       <ThemeButton />
       <h1>404 - Formulário</h1>
-      <ButtonContainer>
+      <ButtonsWrapper>
         <Button style="primary">Faço Nada</Button>
         <Button style="secondary">Faço Tudo</Button>
-      </ButtonContainer>
-    </ScreamWrapper>
+      </ButtonsWrapper>
+    </ScreenWrapper>
   )
 }
