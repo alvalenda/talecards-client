@@ -15,7 +15,7 @@ const StyledButton = styled.button`
   background-color: ${(props) => props.theme.colors.buttonSecondary};
   color: ${(props) => props.theme.colors.buttonText};
   cursor: pointer;
-  transition: background-color 0.66s ease-in-out, border-color 0.4s ease-in-out;
+  transition: background-color 0.8s ease-in, border-color 0.4s ease-in-out;
 
   &:hover {
     border-color: ${(props) => props.theme.colors.interactive};
@@ -26,7 +26,7 @@ const StyledButton = styled.button`
     border-color: ${(props) => props.theme.colors.interactive};
   }
 `
-export default function Button({
+export function Button({
   children = 'Button',
   handleClick = () => {
     console.log('Clicked')

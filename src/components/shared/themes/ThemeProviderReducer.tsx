@@ -6,7 +6,7 @@ type Props = {
   children: React.ReactNode
 }
 
-export default function ThemeProviderReducer({ children }: Props) {
+export function ThemeProviderReducer({ children }: Props) {
   const { darkMode } = useContext<{ darkMode: boolean }>(
     TalespireContext as any
   )
@@ -32,10 +32,11 @@ export default function ThemeProviderReducer({ children }: Props) {
           disabledText: '#fff',
         },
         fonts: {
-          primary: 'Roboto, sans-serif',
+          primary: 'Inter, sans-serif',
         },
 
         fontSizes: {
+          xsmall: '0.9em',
           small: '1.2em',
           medium: '1.6em',
           large: '2.4em',

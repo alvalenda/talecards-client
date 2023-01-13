@@ -12,11 +12,11 @@ const StyledThemeButton = styled.button`
   padding: 0;
   width: 2.4em;
   height: 2.4em;
-  font-size: 1em;
+  font-size: ${(props) => props.theme.fontSizes.xsmall};
   background-color: ${(props) => props.theme.colors.buttonPrimary};
   color: ${(props) => props.theme.colors.buttonText};
   cursor: pointer;
-  transition: background-color 0.66s ease-in-out, border-color 0.4s ease-in-out;
+  transition: background-color 0.8s ease-in-out, border-color 0.4s ease-in-out;
 
   svg {
     vertical-align: middle;
@@ -32,7 +32,7 @@ const StyledThemeButton = styled.button`
     border-color: ${(props) => props.theme.colors.interactive};
   }
 `
-export default function ThemeButton({}: Props) {
+export function ThemeButton({}: Props) {
   const { darkMode, dispatch } = useContext<{
     darkMode: boolean
     dispatch: React.Dispatch<TalespireAction>
