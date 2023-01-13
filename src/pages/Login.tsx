@@ -15,7 +15,7 @@ const ScreenWrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.primary};
 
-  transition: background-color 0.8s ease-in;
+  transition: background-color 0.4s linear;
 `
 
 const ButtonsWrapper = styled.div`
@@ -29,7 +29,7 @@ const ButtonsWrapper = styled.div`
 export function Login({}: Props) {
   return (
     <ScreenWrapper>
-      <Title />
+      <Title text="Talespire Cards" />
       <ThemeButton />
       <h1>404 - Formulário</h1>
       <ButtonsWrapper>
