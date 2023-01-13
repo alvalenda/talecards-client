@@ -25,7 +25,8 @@ const HeaderSection = styled.header`
 
   .theme {
     position: absolute;
-    right: 1em;
+    top: 1rem;
+    right: calc(50% - 12em);
   }
 
   transition: background-color 0.4s linear;

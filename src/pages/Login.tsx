@@ -1,8 +1,7 @@
-import { Title } from '@/components/Title'
-import { ThemeButton } from '@/components/shared/ThemeButton'
-import styled from 'styled-components'
+import { LoginForm } from '@/components/LoginForm'
 import { Button } from '@/components/shared/Button'
 import { Header } from '@/components/shared/Header'
+import styled from 'styled-components'
 
 type Props = {}
 
@@ -11,7 +10,7 @@ const ScreenWrapper = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.primary};
@@ -31,10 +30,12 @@ export function Login({}: Props) {
   return (
     <ScreenWrapper>
       <Header />
-      <ButtonsWrapper>
-        <Button style="primary" text="Faço Nada" />
-        <Button style="secondary" text="Faço Tudo" />
-      </ButtonsWrapper>
+      <LoginForm>
+        <ButtonsWrapper>
+          <Button style="primary" text="Faço Nada" />
+          <Button style="secondary" text="Faço Tudo" />
+        </ButtonsWrapper>
+      </LoginForm>
     </ScreenWrapper>
   )
 }
