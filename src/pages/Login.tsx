@@ -2,6 +2,7 @@ import { Title } from '@/components/Title'
 import { ThemeButton } from '@/components/shared/ThemeButton'
 import styled from 'styled-components'
 import { Button } from '@/components/shared/Button'
+import { Header } from '@/components/shared/Header'
 
 type Props = {}
 
@@ -29,12 +30,10 @@ const ButtonsWrapper = styled.div`
 export function Login({}: Props) {
   return (
     <ScreenWrapper>
-      <Title text="Talespire Cards" />
-      <ThemeButton />
-      <h1>404 - Formulário</h1>
+      <Header />
       <ButtonsWrapper>
-        <Button style="primary">Faço Nada</Button>
-        <Button style="secondary">Faço Tudo</Button>
+        <Button style="primary" text="Faço Nada" />
+        <Button style="secondary" text="Faço Tudo" />
       </ButtonsWrapper>
     </ScreenWrapper>
   )
