@@ -6,38 +6,56 @@ import { TalespireAction } from '@/contexts/talespire/TalespireReducer'
 
 type Props = {}
 
-const getStyle = (darkMode: boolean) => {
-  return styled.button`
-    border-radius: 50%;
-    border: 2px solid transparent;
-    padding: 0;
-    width: 2.4em;
-    height: 2.4em;
-    font-size: ${(props) => props.theme.fontSizes.xsmall};
-    background-color: ${(props) => props.theme.colors.buttonPrimary};
-    color: ${(props) => props.theme.colors.background};
-    cursor: pointer;
-    transition: all 0.3s linear;
+const StyledDarkButton = styled.button`
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  width: 2.4em;
+  height: 2.4em;
+  font-size: ${(props) => props.theme.fontSizes.xsmall};
+  background-color: ${(props) => props.theme.colors.buttonPrimary};
+  color: ${(props) => props.theme.colors.background};
+  cursor: pointer;
+  transition: all 0.3s linear;
 
-    svg {
-      vertical-align: middle;
-      align-self: center;
-    }
+  svg {
+    vertical-align: middle;
+    align-self: center;
+  }
 
-    &:hover,
-    &:focus-visible {
-      outline: none;
+  &:hover,
+  &:focus-visible {
+    outline: none;
+    border-color: ${(props) => props.theme.colors.interactive};
+  }
+`
 
-      border-color: ${(props) => props.theme.colors.interactive};
+const StyledLightButton = styled.button`
+  border-radius: 50%;
+  border: 2px solid transparent;
+  padding: 0;
+  width: 2.4em;
+  height: 2.4em;
+  font-size: ${(props) => props.theme.fontSizes.xsmall};
+  background-color: ${(props) => props.theme.colors.buttonPrimary};
+  color: ${(props) => props.theme.colors.background};
+  cursor: pointer;
+  transition: all 0.3s linear;
 
-      background-color: ${!darkMode
-        ? (props) => props.theme.colors.interactive
-        : ''};
+  svg {
+    vertical-align: middle;
+    align-self: center;
+  }
 
-      /* color: ${darkMode ? (props) => props.theme.colors.interactive : ''}; */
-    }
-  `
-}
+  &:hover,
+  &:focus-visible {
+    outline: none;
+
+    border-color: ${(props) => props.theme.colors.interactive};
+
+    background-color: ${(props) => props.theme.colors.interactive};
+  }
+`
 
 export function ThemeButton({}: Props) {
   const { darkMode, dispatch } = useContext<{
@@ -45,16 +63,22 @@ export function ThemeButton({}: Props) {
     dispatch: React.Dispatch<TalespireAction>
   }>(TalespireContext as any)
 
-  const StyledThemeButton = getStyle(darkMode)
-
   const handleDarkMode = () => {
     dispatch({ type: 'darkMode', payload: !darkMode })
     console.log('Dark Mode: ', darkMode)
   }
 
+  if (darkMode) {
+    return (
+      <StyledDarkButton onClick={handleDarkMode}>
+        <MdDarkMode size={25} />
+      </StyledDarkButton>
+    )
+  }
+
   return (
-    <StyledThemeButton onClick={handleDarkMode}>
-      {darkMode ? <MdLightMode size={25} /> : <MdDarkMode size={25} />}
-    </StyledThemeButton>
+    <StyledLightButton onClick={handleDarkMode}>
+      <MdLightMode size={25} />
+    </StyledLightButton>
   )
 }
