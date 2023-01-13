@@ -7,7 +7,7 @@ type Props = {
   style?: 'primary' | 'secondary'
 }
 
-const returnStyle = (style: string) => {
+const returnStyle = (bType: string) => {
   return styled.button`
     border-radius: 8px;
     padding: 0.3em 0.6em;
@@ -15,30 +15,32 @@ const returnStyle = (style: string) => {
     font-family: inherit;
     font-weight: 400;
 
-    border: ${style === 'primary' ? '2px solid transparent' : '2px solid'};
+    border: ${bType === 'primary' ? '2px solid transparent' : '2px solid'};
 
-    background-color: ${style === 'primary'
+    background-color: ${bType === 'primary'
       ? (props) => props.theme.colors.buttonPrimary
       : (props) => props.theme.colors.buttonSecondary};
 
-    color: ${style === 'primary'
+    color: ${bType === 'primary'
       ? (props) => props.theme.colors.buttonSecondary
       : (props) => props.theme.colors.buttonPrimary};
 
     cursor: pointer;
-    transition: all 0.8s ease-in, border-color 0.4s ease-in, color 0.4s ease-in;
+    transition: all 0.3s linear;
 
-    &:hover {
-      border-color: ${(props) => props.theme.colors.interactive};
-
-      color: ${(props) => props.theme.colors.interactive};
-    }
-
-    &:focus,
+    &:hover,
+    /* &:focus, */
     &:focus-visible {
+      outline: none;
       border-color: ${(props) => props.theme.colors.interactive};
 
-      color: ${(props) => props.theme.colors.interactive};
+      background-color: ${bType === 'primary'
+        ? (props) => props.theme.colors.interactive
+        : ''};
+
+      color: ${bType === 'secondary'
+        ? (props) => props.theme.colors.interactive
+        : ''};
     }
   `
 }
