@@ -17,13 +17,24 @@ const ScreamWrapper = styled.section`
   transition: background-color 0.8s ease-in;
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-around;
+  place-items: center;
+  margin: 0 auto;
+  width: 16em;
+`
+
 export function Login({}: Props) {
   return (
     <ScreamWrapper>
       <Title />
       <ThemeButton />
-      <h1>404</h1>
-      <Button>Faço Nada</Button>
+      <h1>404 - Formulário</h1>
+      <ButtonContainer>
+        <Button style="primary">Faço Nada</Button>
+        <Button style="secondary">Faço Tudo</Button>
+      </ButtonContainer>
     </ScreamWrapper>
   )
 }
