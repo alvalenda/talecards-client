@@ -11,28 +11,67 @@ export function ThemeProviderReducer({ children }: Props) {
     TalespireContext as any
   )
 
+  if (darkMode) {
+    return (
+      <ThemeProvider
+        theme={{
+          colors: {
+            primary: '#fff',
+            secondary: '#afbec4',
+
+            background: '#242424',
+            backgroundVar: '#374850',
+
+            buttonPrimary: '#fff',
+            buttonSecondary: '#242424',
+
+            interactive: '#026ebe',
+            inlineError: '#fff',
+
+            buttonText: '#fff',
+            buttonDisabled: '#ccc',
+            disabledText: '#fff',
+          },
+          fonts: {
+            primary: 'Roboto, sans-serif',
+          },
+
+          fontSizes: {
+            xsmall: '0.9em',
+            small: '1.2em',
+            medium: '1.6em',
+            large: '2.4em',
+            xlarge: '3.2em',
+          },
+        }}
+      >
+        {children}
+      </ThemeProvider>
+    )
+  }
+
   return (
     <ThemeProvider
       theme={{
         colors: {
-          primary: darkMode ? '#fff' : '#242424',
-          secondary: darkMode ? '#afbec4' : '#445a63',
+          primary: '#242424',
+          secondary: '#445a63',
 
-          background: darkMode ? '#242424' : '#fff',
-          backgroundVar: darkMode ? '#374850' : '#d0d8dc',
+          background: '#fff',
+          backgroundVar: '#d0d8dc',
 
-          buttonPrimary: darkMode ? '#fff' : '#242424',
-          buttonSecondary: darkMode ? '#242424' : '#fff',
+          buttonPrimary: '#242424',
+          buttonSecondary: '#fff',
 
-          interactive: darkMode ? '#026ebe' : '#026ebe',
-          inlineError: darkMode ? '#fff' : '#c00300',
+          interactive: '#026ebe',
+          inlineError: '#c00300',
 
           buttonText: '#fff',
           buttonDisabled: '#ccc',
           disabledText: '#fff',
         },
         fonts: {
-          primary: 'Inter, sans-serif',
+          primary: 'Roboto, sans-serif',
         },
 
         fontSizes: {
@@ -48,3 +87,5 @@ export function ThemeProviderReducer({ children }: Props) {
     </ThemeProvider>
   )
 }
+
+// complexidade de lógica: 12
