@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 
-type Props = {}
+type Props = {
+  text: string
+}
 
 const StyledTitle = styled.h1`
   background-color: ${(props) => props.theme.colors.background};
@@ -8,13 +10,13 @@ const StyledTitle = styled.h1`
   font-size: ${(props) => props.theme.fontSizes.xlarge};
   line-height: 1.1;
   text-align: center;
-  transition: all 0.8s ease-in;
+  transition: all 0.4s linear;
 `
 
-export function Title({}: Props) {
+export function Title({ text }: Props) {
   return (
     <div>
-      <StyledTitle>Hello World of Styled Components!</StyledTitle>
+      <StyledTitle>{text}</StyledTitle>
     </div>
   )
 }
