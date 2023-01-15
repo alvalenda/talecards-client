@@ -12,4 +12,15 @@ export const ScreenWrapper = styled.section`
   color: ${({ theme }) => theme.colors.primary};
 
   transition: var(--transition);
+
+  &::before {
+    content: '';
+    background-image: url(/src/assets/bg-texture6.png);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.8;
+  }
 `
