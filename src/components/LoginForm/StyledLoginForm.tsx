@@ -60,6 +60,10 @@ export const StyledLoginForm = styled.form`
     border-color: ${({ theme }) => theme.colors.interactive};
   }
 
+  input::placeholder {
+    text-align: center;
+  }
+
   .form-input-password {
     position: absolute;
     right: 3px;

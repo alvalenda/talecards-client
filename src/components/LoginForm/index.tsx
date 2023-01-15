@@ -25,7 +25,12 @@ export function LoginForm({ children }: Props) {
             <FaHatWizard size={24} />
             <label htmlFor="inputEmail">EMAIL</label>
           </div>
-          <input type="email" name="email" id="email" />
+          <input
+            type="email"
+            name="email"
+            id="email"
+            placeholder="account e-mail"
+          />
         </div>
         <div className="form-wrapper">
           <div>
@@ -36,6 +41,7 @@ export function LoginForm({ children }: Props) {
             type={showPassword ? 'text' : 'password'}
             name="password"
             id="password"
+            placeholder="password"
           />
 
           {showPassword ? (
