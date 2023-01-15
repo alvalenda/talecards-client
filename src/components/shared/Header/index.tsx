@@ -19,8 +19,8 @@ const HeaderSection = styled.header`
   color: ${({ theme }) => theme.colors.primary};
 
   h1 {
-    font-size: ${({ theme }) => theme.fontSizes.large};
-    font-weight: 400;
+    font-size: var(--font-size-xxxl);
+    font-weight: 300;
   }
 
   .theme {

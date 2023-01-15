@@ -25,7 +25,7 @@ const StyledLoginSection = styled.section`
   background-color: ${({ theme }) => theme.colors.backgroundVar};
   color: ${({ theme }) => theme.colors.secondary};
 
-  transition: background-color 0.4s linear;
+  transition: --var(--transition);
 `
 
 const StyledLoginForm = styled.form`
@@ -70,7 +70,7 @@ const StyledLoginForm = styled.form`
     padding: 0.5rem;
     border-radius: 12px;
     flex-basis: 1rem;
-    font-size: ${({ theme }) => theme.fontSizes.small};
+    font-size: var(--font-size-md);
 
     border: 2px solid transparent;
     outline: 1px solid ${({ theme }) => theme.colors.secondary};
@@ -79,7 +79,7 @@ const StyledLoginForm = styled.form`
 
     color: ${({ theme }) => theme.colors.secondary};
 
-    transition: background-color 0.4s linear, border-color 0.3s ease;
+    transition: var(--transition), border-color 0.3s ease;
   }
 
   input:focus {

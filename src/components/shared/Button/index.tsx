@@ -9,7 +9,7 @@ type Props = {
 const StyledPrimaryButton = styled.button`
   border-radius: 8px;
   padding: 0.3em 0.6em;
-  font-size: ${(props) => props.theme.fontSizes.small};
+  font-size: var(--font-size-lg);
   font-family: inherit;
   font-weight: 400;
 
@@ -32,7 +32,7 @@ const StyledPrimaryButton = styled.button`
 const StyledSecondaryButton = styled.button`
   border-radius: 8px;
   padding: 0.3em 0.6em;
-  font-size: ${(props) => props.theme.fontSizes.small};
+  font-size: var(--font-size-lg);
   font-family: inherit;
   font-weight: 400;
 
