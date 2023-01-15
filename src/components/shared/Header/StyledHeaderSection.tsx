@@ -9,13 +9,15 @@ export const HeaderSection = styled.header`
   align-items: center;
   justify-content: center;
   margin: 0 auto;
+  height: 4em;
+  min-width: calc(100vw - 1em);
+  transition: var(--transition);
 
   border-radius: 16px 16px 0 0;
   border-bottom: 1px solid ${({ theme }) => theme.colors.primary};
 
-  height: 4em;
-  width: calc(100% - 1em);
   background-color: ${({ theme }) => theme.colors.background};
+
   color: ${({ theme }) => theme.colors.primary};
 
   h1 {
@@ -28,6 +30,4 @@ export const HeaderSection = styled.header`
     top: 1rem;
     right: calc(50% - 12em);
   }
-
-  transition: var(--transition);
 `
