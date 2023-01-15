@@ -1,64 +1,13 @@
-import React, { useContext } from 'react'
-import { MdDarkMode, MdLightMode } from 'react-icons/md'
-import styled from 'styled-components'
 import { TalespireContext } from '@/contexts/talespire/TalespireContext'
 import {
   TalespireAction,
   TalespireState,
 } from '@/contexts/talespire/TalespireReducer'
+import React, { useContext } from 'react'
+import { MdDarkMode, MdLightMode } from 'react-icons/md'
+import { StyledDarkButton, StyledLightButton } from './StyledThemeButton'
 
 type Props = {}
-
-const StyledDarkButton = styled.button`
-  border-radius: 50%;
-  border: 2px solid transparent;
-  padding: 0;
-  width: 2.4em;
-  height: 2.4em;
-  font-size: var(--font-size-sm);
-  background-color: ${(props) => props.theme.colors.buttonPrimary};
-  color: ${(props) => props.theme.colors.background};
-  cursor: pointer;
-  transition: all 0.3s linear;
-
-  svg {
-    vertical-align: middle;
-    align-self: center;
-  }
-
-  &:hover,
-  &:focus-visible {
-    outline: none;
-    border-color: ${(props) => props.theme.colors.interactive};
-  }
-`
-
-const StyledLightButton = styled.button`
-  border-radius: 50%;
-  border: 2px solid transparent;
-  padding: 0;
-  width: 2.4em;
-  height: 2.4em;
-  font-size: var(--font-size-sm);
-  background-color: ${(props) => props.theme.colors.buttonPrimary};
-  color: ${(props) => props.theme.colors.background};
-  cursor: pointer;
-  transition: all 0.3s linear;
-
-  svg {
-    vertical-align: middle;
-    align-self: center;
-  }
-
-  &:hover,
-  &:focus-visible {
-    outline: none;
-
-    border-color: ${(props) => props.theme.colors.interactive};
-
-    background-color: ${(props) => props.theme.colors.interactive};
-  }
-`
 
 export function ThemeButton({}: Props) {
   const { darkMode, dispatch } = useContext<{
