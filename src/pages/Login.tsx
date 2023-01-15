@@ -22,7 +22,7 @@ const ButtonsWrapper = styled.div`
   display: flex;
   justify-content: space-around;
   place-items: center;
-  margin: 0 auto;
+  margin: 2rem auto 0 auto;
   width: 16em;
 `
 
