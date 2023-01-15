@@ -1,14 +1,15 @@
 import { useContext } from 'react'
 import { ThemeProvider } from 'styled-components'
 import { TalespireContext } from '@/contexts/talespire/TalespireContext'
+import { TalespireState } from '@/contexts/talespire/TalespireReducer'
 
 type Props = {
   children: React.ReactNode
 }
 
 export function ThemeProviderReducer({ children }: Props) {
-  const { darkMode } = useContext<{ darkMode: boolean }>(
-    TalespireContext as any
+  const { darkMode } = useContext<Partial<TalespireState>>(
+    TalespireContext as React.Context<{}>
   )
 
   if (darkMode) {
@@ -35,14 +36,6 @@ export function ThemeProviderReducer({ children }: Props) {
           fonts: {
             primary: 'Roboto, sans-serif',
           },
-
-          fontSizes: {
-            xsmall: '0.9em',
-            small: '1.2em',
-            medium: '1.6em',
-            large: '2.4em',
-            xlarge: '3.2em',
-          },
         }}
       >
         {children}
@@ -65,21 +58,9 @@ export function ThemeProviderReducer({ children }: Props) {
 
           interactive: '#026ebe',
           inlineError: '#c00300',
-
-          buttonText: '#fff',
-          buttonDisabled: '#ccc',
-          disabledText: '#fff',
         },
         fonts: {
           primary: 'Roboto, sans-serif',
-        },
-
-        fontSizes: {
-          xsmall: '0.9em',
-          small: '1.2em',
-          medium: '1.6em',
-          large: '2.4em',
-          xlarge: '3.2em',
         },
       }}
     >
@@ -87,5 +68,3 @@ export function ThemeProviderReducer({ children }: Props) {
     </ThemeProvider>
   )
 }
-
-// complexidade de lógica: 12
