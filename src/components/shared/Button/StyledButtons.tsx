@@ -11,7 +11,7 @@ export const StyledPrimaryButton = styled.button`
   background-color: ${(props) => props.theme.colors.buttonPrimary};
   color: ${(props) => props.theme.colors.buttonSecondary};
   cursor: pointer;
-  transition: all 0.3s linear;
+  transition: var(--transition);
 
   &:hover,
   /* &:focus, */
@@ -34,7 +34,7 @@ export const StyledSecondaryButton = styled.button`
   background-color: ${(props) => props.theme.colors.buttonSecondary};
   color: ${(props) => props.theme.colors.buttonPrimary};
   cursor: pointer;
-  transition: all 0.3s linear;
+  transition: var(--transition);
 
   &:hover,
     /* &:focus, */
