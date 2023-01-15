@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { FaHatWizard } from 'react-icons/fa'
-import { MdLock } from 'react-icons/md'
+import { MdLock, MdRemoveRedEye } from 'react-icons/md'
+import { IoEyeOff } from 'react-icons/io5'
+import { useState } from 'react'
 
 type Props = {
   children?: React.ReactNode
@@ -12,6 +14,7 @@ const StyledLoginSection = styled.section`
   align-content: center;
   vertical-align: middle;
   border-radius: 12px;
+  box-shadow: 0px 0px 3px 1px ${({ theme }) => theme.colors.secondary};
   margin: 12em auto 2em auto;
   padding: 2em 0 0 0;
 
@@ -34,6 +37,7 @@ const StyledLoginForm = styled.form`
   justify-content: center;
 
   .form-wrapper {
+    position: relative;
     display: flex;
     width: 21rem;
     align-items: center;
@@ -83,9 +87,21 @@ const StyledLoginForm = styled.form`
 
     border-color: ${({ theme }) => theme.colors.interactive};
   }
+
+  .form-input-password {
+    position: absolute;
+    right: 3px;
+    cursor: pointer;
+  }
 `
 
 export function LoginForm({ children }: Props) {
+  const [showPassword, setShowPassword] = useState(false)
+
+  const handleShowPassword = () => {
+    setShowPassword(!showPassword)
+  }
+
   return (
     <StyledLoginSection>
       <StyledLoginForm>
@@ -101,7 +117,25 @@ export function LoginForm({ children }: Props) {
             <MdLock size={24} />
             <label htmlFor="inputPassword">PASSWORD</label>
           </div>
-          <input type="password" name="password" id="password" />
+          <input
+            type={showPassword ? 'text' : 'password'}
+            name="password"
+            id="password"
+          />
+
+          {showPassword ? (
+            <IoEyeOff
+              size={22}
+              className={'form-input-password'}
+              onClick={handleShowPassword}
+            />
+          ) : (
+            <MdRemoveRedEye
+              size={22}
+              className={'form-input-password'}
+              onClick={handleShowPassword}
+            />
+          )}
         </div>
       </StyledLoginForm>
 
