@@ -1,7 +1,21 @@
 import styled from 'styled-components'
 import { ThemeProviderReducer } from './components/shared/themes/ThemeProviderReducer'
 import { TalespireProvider } from './contexts/talespire/TalespireContext'
-import { Login } from './pages/Login'
+import { LoginPage } from './pages/LoginPage'
+
+function App() {
+  return (
+    <TalespireProvider>
+      <ThemeProviderReducer>
+        <StyledApp className="App">
+          <LoginPage />
+        </StyledApp>
+      </ThemeProviderReducer>
+    </TalespireProvider>
+  )
+}
+
+export default App
 
 const StyledApp = styled.div`
   display: flex;
@@ -11,16 +25,3 @@ const StyledApp = styled.div`
   padding: 0;
   place-items: center;
 `
-function App() {
-  return (
-    <TalespireProvider>
-      <ThemeProviderReducer>
-        <StyledApp className="App">
-          <Login />
-        </StyledApp>
-      </ThemeProviderReducer>
-    </TalespireProvider>
-  )
-}
-
-export default App
