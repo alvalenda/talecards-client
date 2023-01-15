@@ -1,6 +1,8 @@
-import { LoginForm } from '@/components/LoginForm'
-import { Button } from '@/components/shared/Button'
+import { Footer } from '@/components/Footer'
 import { Header } from '@/components/Header'
+import { LoginForm } from '@/components/LoginForm'
+import { LoginTitle } from '@/components/LoginTitle'
+import { Button } from '@/components/shared/Button'
 import { ScreenWrapper } from '@/components/shared/styles/StyledScreenWrapper'
 import styled from 'styled-components'
 
@@ -8,15 +10,19 @@ type Props = {}
 
 export function LoginPage({}: Props) {
   return (
-    <ScreenWrapper>
-      <Header />
-      <LoginForm>
-        <ButtonsWrapper>
-          <Button style="primary" text="Faço Nada" />
-          <Button style="secondary" text="Faço Tudo" />
-        </ButtonsWrapper>
-      </LoginForm>
-    </ScreenWrapper>
+    <>
+      <ScreenWrapper>
+        <Header />
+        <LoginTitle />
+        <LoginForm>
+          <ButtonsWrapper>
+            <Button style="primary" text="Faço Nada" />
+            <Button style="secondary" text="Faço Tudo" />
+          </ButtonsWrapper>
+        </LoginForm>
+        <Footer />
+      </ScreenWrapper>
+    </>
   )
 }
 
