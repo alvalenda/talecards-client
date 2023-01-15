@@ -6,8 +6,14 @@ export const StyledLoginForm = styled.form`
   margin: 0 auto;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
 
+  p {
+    font-size: var(--font-size-xl);
+    margin-bottom: 0.5rem;
+    font-weight: 300;
+
+    color: ${({ theme }) => theme.colors.primary};
+  }
   .form-wrapper {
     position: relative;
     display: flex;
@@ -15,7 +21,6 @@ export const StyledLoginForm = styled.form`
     align-items: center;
     justify-content: space-between;
     margin: 0.4rem 0;
-    gap: 0.5rem;
   }
 
   > div {
@@ -37,8 +42,7 @@ export const StyledLoginForm = styled.form`
   }
 
   input {
-    width: 12rem;
-    height: 1.8rem;
+    width: 13rem;
     padding: 0.5rem;
     border-radius: 12px;
     flex-basis: 1rem;

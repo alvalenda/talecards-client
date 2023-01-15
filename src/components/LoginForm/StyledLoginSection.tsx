@@ -2,15 +2,12 @@ import styled from 'styled-components'
 
 export const StyledLoginSection = styled.section`
   position: relative;
-  align-items: center;
-  align-content: center;
-  vertical-align: middle;
   border-radius: 12px;
   box-shadow: 0px 0px 3px 1px ${({ theme }) => theme.colors.secondary};
-  margin: 12em auto 2em auto;
-  padding: 2em 0 0 0;
+  margin: 8em auto 2em auto;
+  padding: 1em 0 0 0;
 
-  height: calc(35rem);
+  height: 30rem;
   width: var(--container-width-lg);
   max-width: 40em;
 
