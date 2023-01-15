@@ -10,9 +10,6 @@ export const StyledLoginSection = styled.section`
   margin: 12em auto 2em auto;
   padding: 2em 0 0 0;
 
-  background-image: url(/src/assets/bg-texture6.png);
-  background-blend-mode: overlay;
-
   height: calc(35rem);
   width: var(--container-width-lg);
   max-width: 40em;

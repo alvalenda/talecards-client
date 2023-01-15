@@ -1,6 +1,6 @@
 import { LoginForm } from '@/components/LoginForm'
 import { Button } from '@/components/shared/Button'
-import { Header } from '@/components/shared/Header'
+import { Header } from '@/components/Header'
 import { ScreenWrapper } from '@/components/shared/styles/StyledScreenWrapper'
 import styled from 'styled-components'
 
