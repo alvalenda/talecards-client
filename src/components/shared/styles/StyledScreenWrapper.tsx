@@ -11,5 +11,5 @@ export const ScreenWrapper = styled.section`
   background-color: ${({ theme }) => theme.colors.background};
   color: ${({ theme }) => theme.colors.primary};
 
-  transition: background-color 0.4s linear;
+  transition: var(--transition);
 `
