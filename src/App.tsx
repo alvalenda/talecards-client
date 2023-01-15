@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { ThemeProviderReducer } from './components/shared/themes/ThemeProviderReducer'
+import { ThemeProviderReducer } from './components/shared/styles/theme/ThemeProviderReducer'
 import { TalespireProvider } from './contexts/talespire/TalespireContext'
 import { LoginPage } from './pages/LoginPage'
 
