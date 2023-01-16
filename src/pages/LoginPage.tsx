@@ -3,7 +3,7 @@ import { Header } from '@/components/Header'
 import { LoginForm } from '@/components/LoginForm'
 import { LoginTitle } from '@/components/LoginTitle'
 import { Button } from '@/components/shared/Button'
-import { ScreenWrapper } from '@/components/shared/styles/StyledScreenWrapper'
+import { ScreenWrapper } from '@/components/styles/StyledScreenWrapper'
 import styled from 'styled-components'
 
 type Props = {}

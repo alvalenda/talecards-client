@@ -1,4 +1,4 @@
-import { StyledPrimaryButton, StyledSecondaryButton } from './StyledButtons'
+import { StyledPrimaryButton, StyledSecondaryButton } from './StyledButton'
 
 type Props = {
   text?: string

@@ -2,8 +2,7 @@ import { useState } from 'react'
 import { FaHatWizard } from 'react-icons/fa'
 import { IoEyeOff } from 'react-icons/io5'
 import { MdLock, MdRemoveRedEye } from 'react-icons/md'
-import { StyledLoginForm } from './StyledLoginForm'
-import { StyledLoginSection } from './StyledLoginSection'
+import { StyledLoginForm, StyledLoginSection } from './StyledLoginForm'
 
 type Props = {
   children?: React.ReactNode

@@ -1,5 +1,4 @@
-import { FooterWrapper } from './FooterWrapper'
-import { StyledFooter } from './StyledFooter'
+import { FooterWrapper, StyledFooter } from './StyledFooter'
 import logo from '@/assets/logo-av.png'
 
 type Props = {}

@@ -1,5 +1,5 @@
 import { ThemeButton } from '../shared/ThemeButton'
-import { HeaderSection } from './StyledHeaderSection'
+import { HeaderSection } from './StyledHeader'
 
 type Props = {}
 

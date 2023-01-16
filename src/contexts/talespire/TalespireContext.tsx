@@ -5,7 +5,7 @@ export const TalespireContext = createContext({})
 
 export const TalespireProvider = ({ children }: any) => {
   const initialState = {
-    darkMode: false,
+    darkMode: true,
   }
 
   const [state, dispatch] = useReducer(talespireReducer, initialState)
