@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const StyledPrimaryButton = styled.button`
   border-radius: 8px;
   padding: 0.3em 0.6em;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-family: inherit;
   font-weight: 400;
 
@@ -26,7 +26,7 @@ export const StyledPrimaryButton = styled.button`
 export const StyledSecondaryButton = styled.button`
   border-radius: 8px;
   padding: 0.3em 0.6em;
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-md);
   font-family: inherit;
   font-weight: 400;
 
