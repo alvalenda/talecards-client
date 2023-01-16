@@ -8,7 +8,7 @@ export const StyledLoginForm = styled.form`
   align-items: center;
 
   p {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-xxl);
     margin-bottom: 0.5rem;
     font-weight: 300;
 
@@ -37,18 +37,19 @@ export const StyledLoginForm = styled.form`
   }
 
   label {
+    font-size: var(--font-size-sm);
     text-align: start;
     vertical-align: middle;
   }
 
   input {
-    width: 13rem;
+    width: 14rem;
     padding: 0.5rem;
     border-radius: 12px;
     flex-basis: 1rem;
     font-size: var(--font-size-md);
-
     border: 2px solid transparent;
+
     outline: 1px solid ${({ theme }) => theme.colors.secondary};
 
     background-color: ${({ theme }) => theme.colors.background};
