@@ -1,13 +1,17 @@
+import { createGlobalStyle } from 'styled-components'
+
+export const GlobalStyle = createGlobalStyle`
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+  * {
+      margin: 0;
+      padding: 0;
+      outline: 0;
+      box-sizing: border-box;
+  }
 
-:root {
-  font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
+  :root {
+    font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
 
   --color-bg: #242424;
   --color-white: rgb(255, 255, 255);
@@ -39,7 +43,6 @@
 
 html {
   scroll-behavior: smooth;
-
   overflow: auto;
   -ms-overflow-style: none; /* IE 11 */
   scrollbar-width: none; /* Firefox 64 */
@@ -51,4 +54,21 @@ html {
 
 body {
   line-height: 1.7;
+}
+`
+
+export interface Theme {
+  colors: {
+    primary: string
+    secondary: string
+    bg: string
+    bgVar: string
+    btnPrimary: string
+    btnSecondary: string
+    interactive: string
+    inlineError: string
+  }
+  fonts: {
+    primary: string
+  }
 }
