@@ -4,6 +4,7 @@ export const StyledFooter = styled.section`
   width: 100vw;
   height: 6rem;
   background-color: ${({ theme }) => theme.colors.background};
+  font-size: var(--font-size-sm);
   z-index: 1;
 
   div {
