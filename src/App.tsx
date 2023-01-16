@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { ThemeProviderReducer } from './components/shared/ThemeProviderReducer'
+import { StyledApp } from './components/styles/StyledApp'
 import { TalespireProvider } from './contexts/talespire/TalespireContext'
 import { GlobalStyle } from './globalStyles'
 import { LoginPage } from './pages/LoginPage'
@@ -18,12 +19,3 @@ function App() {
 }
 
 export default App
-
-const StyledApp = styled.div`
-  display: flex;
-  margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
-  padding: 0;
-  place-items: center;
-`
