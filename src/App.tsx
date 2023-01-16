@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 import { ThemeProviderReducer } from './components/shared/styles/theme/ThemeProviderReducer'
 import { TalespireProvider } from './contexts/talespire/TalespireContext'
+import { GlobalStyle } from './globalStyles'
 import { LoginPage } from './pages/LoginPage'
 
 function App() {
   return (
     <TalespireProvider>
       <ThemeProviderReducer>
+        <GlobalStyle />
         <StyledApp className="App">
           <LoginPage />
         </StyledApp>
