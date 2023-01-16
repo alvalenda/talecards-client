@@ -4,11 +4,18 @@ import { LoginForm } from '@/components/LoginForm'
 import { LoginTitle } from '@/components/LoginTitle'
 import { Button } from '@/components/shared/Button'
 import { ScreenWrapper } from '@/components/styles/StyledScreenWrapper'
+import { useNavigate } from 'react-router-dom'
 import styled from 'styled-components'
 
 type Props = {}
 
 export function LoginPage({}: Props) {
+  const navigate = useNavigate()
+
+  const NavtoAbout = () => {
+    navigate('/about')
+  }
+
   return (
     <>
       <ScreenWrapper>
@@ -17,7 +24,11 @@ export function LoginPage({}: Props) {
         <LoginForm>
           <ButtonsWrapper>
             <Button style="primary" text="Faço Nada" />
-            <Button style="secondary" text="Faço Tudo" />
+            <Button
+              style="secondary"
+              text="Faço Tudo"
+              handleClick={NavtoAbout}
+            />
           </ButtonsWrapper>
         </LoginForm>
         <Footer />
