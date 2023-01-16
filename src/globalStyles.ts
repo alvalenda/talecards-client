@@ -2,26 +2,24 @@ import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   * {
-      margin: 0;
+      margin:0;
       padding: 0;
       outline: 0;
       box-sizing: border-box;
   }
 
   :root {
-    font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
-
   --color-bg: #242424;
   --color-white: rgb(255, 255, 255);
   --color-light: rgba(255, 255, 255, 0.6);
   --color-disabled: rgba(255, 255, 255, 0.4);
   --color-disabled-text: rgba(255, 255, 255, 0.2);
 
-  --font-size-sm: 0.8rem;
-  --font-size-md: 1rem;
-  --font-size-lg: 1.2rem;
-  --font-size-xl: 1.4rem;
-  --font-size-xxl: 1.6rem;
+  --font-size-sm: 0.9rem;
+  --font-size-md: 1.2rem;
+  --font-size-lg: 1.4rem;
+  --font-size-xl: 1.6rem;
+  --font-size-xxl: 1.8rem;
   --font-size-xxxl: 2.4rem;
 
   --container-width-lg: 75%;
@@ -31,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
   --transition: all 400ms ease;
 
   background-color: var(--color-bg);
-
+  font-family: Roboto, Inter, Avenir, Helvetica, Arial, sans-serif;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
