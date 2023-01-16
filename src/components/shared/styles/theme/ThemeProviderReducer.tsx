@@ -28,10 +28,6 @@ export function ThemeProviderReducer({ children }: Props) {
 
             interactive: '#026ebe',
             inlineError: '#fff',
-
-            buttonText: '#fff',
-            buttonDisabled: '#ccc',
-            disabledText: '#fff',
           },
           fonts: {
             primary: 'Roboto, sans-serif',
