@@ -12,6 +12,7 @@ export const SidebarContainer = styled.nav<SidebarContainerProps>`
   justify-content: center;
   transition: width 0.3s ease-in-out;
   position: relative;
+  z-index: 1;
 `
 export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
   position: relative;
@@ -20,10 +21,11 @@ export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
   font-weight: 600;
   text-decoration: none;
   width: 90%;
-  margin: 20px;
+  margin: 5px;
   padding: 10px 20px;
   text-justify: center;
   text-indent: 2rem;
+  overflow: hidden;
 
   svg {
     position: absolute;
