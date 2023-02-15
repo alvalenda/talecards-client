@@ -26,7 +26,7 @@ export function ThemeProviderReducer({ children }: Props) {
             buttonPrimary: '#fff',
             buttonSecondary: '#242424',
 
-            interactive: '#026ebe',
+            interactive: '#ff5733',
             inlineError: '#fff',
           },
           fonts: {
