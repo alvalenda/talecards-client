@@ -1,1 +1,1 @@
-# talecards-client
+# talespire-cards-client
