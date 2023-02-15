@@ -14,7 +14,7 @@ export const ScreenWrapper = styled.section`
 
   &::before {
     content: '';
-    background-image: url(/src/assets/bg-texture6.png);
+    background-image: url('./src/assets/bg-texture6.png');
     position: absolute;
     top: 0;
     left: 0;
