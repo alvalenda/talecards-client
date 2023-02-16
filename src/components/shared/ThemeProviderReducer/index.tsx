@@ -1,15 +1,15 @@
 import { useContext } from 'react'
 import { ThemeProvider } from 'styled-components'
-import { TalespireContext } from '@/contexts/talespire/TalespireContext'
-import { TalespireState } from '@/contexts/talespire/TalespireReducer'
+import { TalecardsState } from '@/contexts/talecards/TalecardsReducer'
+import { TalecardsContext } from '@/contexts/talecards/TalecardsContext'
 
 type Props = {
   children: React.ReactNode
 }
 
 export function ThemeProviderReducer({ children }: Props) {
-  const { darkMode } = useContext<Partial<TalespireState>>(
-    TalespireContext as React.Context<{}>
+  const { darkMode } = useContext<Partial<TalecardsState>>(
+    TalecardsContext as React.Context<{}>
   )
 
   if (darkMode) {

@@ -1,19 +1,19 @@
-import { UserMenuButton, UserMenuContainer } from './styled'
-import { CiLogout } from 'react-icons/ci'
-import { VscColorMode } from 'react-icons/vsc'
-import { RiSettings5Fill } from 'react-icons/ri'
-import { useContext } from 'react'
+import { TalecardsContext } from '@/contexts/talecards/TalecardsContext'
 import {
-  TalespireAction,
-  TalespireState,
-} from '@/contexts/talespire/TalespireReducer'
-import { TalespireContext } from '@/contexts/talespire/TalespireContext'
+  TalecardsAction,
+  TalecardsState,
+} from '@/contexts/talecards/TalecardsReducer'
+import { useContext } from 'react'
+import { CiLogout } from 'react-icons/ci'
+import { RiSettings5Fill } from 'react-icons/ri'
+import { VscColorMode } from 'react-icons/vsc'
+import { UserMenuButton, UserMenuContainer } from './styled'
 
 export function UserMenu({ expanded }: Props) {
   const { darkMode, dispatch } = useContext<{
-    darkMode: Partial<TalespireState>
-    dispatch: React.Dispatch<TalespireAction>
-  }>(TalespireContext as any)
+    darkMode: Partial<TalecardsState>
+    dispatch: React.Dispatch<TalecardsAction>
+  }>(TalecardsContext as any)
 
   const handleDarkMode = () => {
     dispatch({ type: 'darkMode', payload: !darkMode })
