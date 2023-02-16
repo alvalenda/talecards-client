@@ -51,16 +51,16 @@ export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
 export const ExpandButton = styled.button<ExpandButtonProps>`
   position: absolute;
   bottom: 12rem;
-  left: 0;
-  border: none;
-  /* outline: 1px solid ${({ theme }) => theme.colors.secondary}; */
+  left: ${({ expanded }) => (expanded === 'true' ? '181px' : '49px')};
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  /* border-left: none; */
   border-radius: 0 5px 5px 0;
   color: ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.backgroundVar};
   font-size: var(--font-size-lg);
-  width: ${({ expanded }) => (expanded === 'true' ? '200px' : '70px')};
+  width: 20px;
   height: 60px;
-  z-index: 1;
+  z-index: 2;
 
   transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
 
@@ -110,10 +110,10 @@ export const UserMenuButton = styled.button<UserMenuButtonProps>`
   font: inherit;
   border-radius: 5px;
   font-weight: 600;
-  width: ${({ expanded }) => (expanded === 'true' ? '95%' : '50px')};
-  margin: 5px;
-  padding: 10px 20px;
-  text-indent: 2rem;
+  width: ${({ expanded }) => (expanded === 'true' ? '90%' : '50px')};
+  margin: ${({ expanded }) => (expanded === 'true' ? '5px 10px' : '5px 0')};
+  padding: 10px 0;
+  text-indent: 3rem;
   text-align: left;
   overflow: hidden;
   cursor: pointer;
@@ -140,9 +140,9 @@ export const UserMenuContainer = styled.div<SidebarContainerProps>`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.background};
-  padding: 10px;
+  padding: 10px 0;
   margin-top: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
   border-top: 1px solid ${({ theme }) => theme.colors.secondary};
