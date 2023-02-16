@@ -3,7 +3,7 @@ import { MainContent } from './components/MainContent'
 import { OptionsBar } from './components/OptionsBar'
 import { ThemeProviderReducer } from './components/shared/ThemeProviderReducer'
 import { Sidebar } from './components/SideBar'
-import { TalespireProvider } from './contexts/talespire/TalespireContext'
+import { TalecardsProvider } from './contexts/talecards/TalecardsContext'
 import { GlobalStyle } from './globalStyles'
 import { AboutPage } from './pages/AboutPage'
 import { LoginPage } from './pages/LoginPage'
@@ -11,7 +11,7 @@ import styled from 'styled-components'
 
 function App() {
   return (
-    <TalespireProvider>
+    <TalecardsProvider>
       <ThemeProviderReducer>
         <GlobalStyle />
         <BrowserRouter>
@@ -42,7 +42,7 @@ function App() {
           {/* </Routes> */}
         </BrowserRouter>
       </ThemeProviderReducer>
-    </TalespireProvider>
+    </TalecardsProvider>
   )
 }
 
