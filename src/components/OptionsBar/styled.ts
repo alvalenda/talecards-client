@@ -3,22 +3,25 @@ import styled from 'styled-components'
 export const OptionsBarContainer = styled.div`
   position: fixed;
   bottom: 0;
-  width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #f5f5f5;
+  padding-left: 50px;
+  width: 100%;
+  background-color: ${({ theme }) => theme.colors.backgroundVar};
 `
 
 export const OptionButton = styled.button`
-  background-color: #fff;
-  color: #333;
   border: none;
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.primary};
+  outline: 1px solid ${({ theme }) => theme.colors.primary};
   padding: 10px 20px;
   margin: 10px;
   border-radius: 5px;
   font-weight: bold;
+
   &:hover {
-    background-color: #ff5733;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors.interactive};
+    color: var(--color-white);
   }
 `
