@@ -32,6 +32,10 @@ function App() {
                 path="/section2"
                 element={<MainContent section="section2" />}
               />
+              <Route
+                path="/section3"
+                element={<MainContent section="section3" />}
+              />
             </Routes>
             <OptionsBar />
           </AppContainer>
