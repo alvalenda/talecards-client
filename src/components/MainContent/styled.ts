@@ -5,10 +5,12 @@ export const MainContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: ${({ theme }) => theme.colors.background};
   width: 100%;
 `
 
 export const MainContentTitle = styled.h1`
   font-size: 3rem;
   margin-top: 50px;
+  color: ${({ theme }) => theme.colors.primary};
 `
