@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { MdOutlineExpandLess } from 'react-icons/md'
 import { HiHome } from 'react-icons/hi'
 import { SiHomebrew } from 'react-icons/si'
-import { GiBestialFangs } from 'react-icons/gi'
+import { GiBestialFangs, GiSwordman } from 'react-icons/gi'
 import { ExpandButton, SidebarContainer, SidebarLink } from './styled'
 
 export function Sidebar() {
@@ -24,11 +24,16 @@ export function Sidebar() {
       </SidebarLink>
 
       <SidebarLink to="/section1" expanded={getExpanded()}>
+        <GiSwordman size={25} />
+        {getExpanded() === `true` ? 'Personagem' : <>&nbsp;</>}
+      </SidebarLink>
+
+      <SidebarLink to="/section2" expanded={getExpanded()}>
         <GiBestialFangs size={25} />
         {getExpanded() === `true` ? 'Bestiário' : <>&nbsp;</>}
       </SidebarLink>
 
-      <SidebarLink to="/section2" expanded={getExpanded()}>
+      <SidebarLink to="/section3" expanded={getExpanded()}>
         <SiHomebrew size={25} />
         {getExpanded() === `true` ? 'Homebrew' : <>&nbsp;</>}
       </SidebarLink>
