@@ -9,7 +9,7 @@ export const SidebarContainer = styled.nav<SidebarContainerProps>`
   justify-content: center;
   height: 100vh;
   overflow: hidden;
-  outline: 1px solid ${({ theme }) => theme.colors.secondary};
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2);
   color: ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.backgroundVar};
   width: ${({ expanded }) => (expanded === 'true' ? '200px' : '50px')};
@@ -50,17 +50,17 @@ export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
 `
 export const ExpandButton = styled.button<ExpandButtonProps>`
   position: absolute;
-  bottom: 12rem;
-  left: ${({ expanded }) => (expanded === 'true' ? '181px' : '49px')};
-  border: 1px solid ${({ theme }) => theme.colors.secondary};
-  /* border-left: none; */
+  bottom: calc(50% - 4rem);
+  left: 0;
+  border: none;
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2);
   border-radius: 0 5px 5px 0;
   color: ${({ theme }) => theme.colors.primary};
   background-color: ${({ theme }) => theme.colors.backgroundVar};
   font-size: var(--font-size-lg);
-  width: 20px;
+  width: ${({ expanded }) => (expanded === 'true' ? '202px' : '70px')};
   height: 60px;
-  z-index: 2;
+  z-index: 1;
 
   transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
 
@@ -110,20 +110,20 @@ export const UserMenuButton = styled.button<UserMenuButtonProps>`
   font: inherit;
   border-radius: 5px;
   font-weight: 600;
-  width: ${({ expanded }) => (expanded === 'true' ? '90%' : '50px')};
-  margin: ${({ expanded }) => (expanded === 'true' ? '5px 10px' : '5px 0')};
+  width: ${({ expanded }) => (expanded === 'true' ? '88%' : '45px')};
+  margin: ${({ expanded }) => (expanded === 'true' ? '5px 10px' : '5px 0px')};
   padding: 10px 0;
   text-indent: 3rem;
   text-align: left;
   overflow: hidden;
   cursor: pointer;
 
-  transition: all 0.3s ease-in-out;
+  transition: width 0.3s ease-in-out, margin 0.3s ease-in-out;
 
   svg {
     position: absolute;
     top: 50%;
-    left: 0.65rem;
+    left: ${({ expanded }) => (expanded === 'true' ? '0.65rem' : '0.6rem')};
     transform: translate(0, -50%);
   }
 
@@ -143,9 +143,11 @@ export const UserMenuContainer = styled.div<SidebarContainerProps>`
   align-items: flex-start;
   background-color: ${({ theme }) => theme.colors.background};
   padding: 10px 0;
+  padding-left: ${({ expanded }) => (expanded === 'true' ? '0' : '2px')};
   margin-top: 10px;
-  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  border-top: 1px solid ${({ theme }) => theme.colors.secondary};
+  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
+  /* border-top: 1px solid ${({ theme }) => theme.colors.secondary}; */
   width: ${({ expanded }) => (expanded === 'true' ? '200px' : '50px')};
   z-index: 1;
 
