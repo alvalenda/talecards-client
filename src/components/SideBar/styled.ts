@@ -3,16 +3,17 @@ import styled, { css } from 'styled-components'
 
 export const SidebarContainer = styled.nav<SidebarContainerProps>`
   position: relative;
-  color: ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.backgroundVar};
-  width: ${({ expanded }) => (expanded === 'true' ? '200px' : '50px')};
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: width 0.3s ease-in-out;
+  height: 100vh;
   overflow: hidden;
+  outline: 1px solid ${({ theme }) => theme.colors.secondary};
+  color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.backgroundVar};
+  width: ${({ expanded }) => (expanded === 'true' ? '200px' : '50px')};
+  transition: width 0.3s ease-in-out;
   z-index: 1;
 `
 export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
@@ -36,6 +37,12 @@ export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
     transform: translate(0, -50%);
   }
 
+  &:hover,
+  &:focus-visible {
+    color: var(--color-white);
+    background: ${({ theme }) => theme.colors.interactive};
+  }
+
   &.active {
     color: ${({ theme }) => theme.colors.interactive};
     background-color: ${({ theme }) => theme.colors.background} !important;
@@ -43,23 +50,24 @@ export const SidebarLink = styled(NavLink)<ExpandSidebarLinkProps>`
 `
 export const ExpandButton = styled.button<ExpandButtonProps>`
   position: absolute;
-  bottom: 11.5rem;
-  left: ${({ expanded }) => (expanded === 'true' ? '8.2rem' : '0.01rem')};
-  border: ${({ expanded }) =>
-    expanded === 'true' ? 'none' : '1px solid #333'};
-  border-radius: 33%;
+  bottom: 12rem;
+  left: 0;
+  border: none;
+  /* outline: 1px solid ${({ theme }) => theme.colors.secondary}; */
+  border-radius: 0 5px 5px 0;
   color: ${({ theme }) => theme.colors.primary};
-  background-color: ${({ theme }) => theme.colors.background};
+  background-color: ${({ theme }) => theme.colors.backgroundVar};
   font-size: var(--font-size-lg);
-  width: 50px;
-  height: 50px;
+  width: ${({ expanded }) => (expanded === 'true' ? '200px' : '70px')};
+  height: 60px;
+  z-index: 1;
 
-  transition: left 0.3s ease-in-out;
+  transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
 
   svg {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: calc(100% - 0.65rem);
 
     transition: transform 0.3s ease-in-out;
 
@@ -74,7 +82,7 @@ export const ExpandButton = styled.button<ExpandButtonProps>`
       right: 0;
     `}
 
-  &:hover {
+  &:hover, &:focus-visible {
     cursor: pointer;
     color: var(--color-white);
     background: ${({ theme }) => theme.colors.interactive};
@@ -119,9 +127,10 @@ export const UserMenuButton = styled.button<UserMenuButtonProps>`
     transform: translate(0, -50%);
   }
 
-  &.active {
-    color: ${({ theme }) => theme.colors.interactive};
-    background-color: ${({ theme }) => theme.colors.background} !important;
+  &:hover,
+  &:focus-visible {
+    color: var(--color-white);
+    background: ${({ theme }) => theme.colors.interactive};
   }
 `
 
@@ -136,7 +145,7 @@ export const UserMenuContainer = styled.div<SidebarContainerProps>`
   padding: 10px;
   margin-top: 10px;
   box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  border-top: 1px solid ${({ theme }) => theme.colors.primary};
+  border-top: 1px solid ${({ theme }) => theme.colors.secondary};
   width: ${({ expanded }) => (expanded === 'true' ? '200px' : '50px')};
   z-index: 1;
 
