@@ -3,7 +3,7 @@ import {
   TalecardsAction,
   TalecardsState,
 } from '@/contexts/talecards/TalecardsReducer'
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 import { MdDarkMode, MdLightMode } from 'react-icons/md'
 import { StyledDarkButton, StyledLightButton } from './StyledThemeButton'
 
@@ -17,7 +17,6 @@ export function ThemeButton({}: Props) {
 
   const handleDarkMode = () => {
     dispatch({ type: 'darkMode', payload: !darkMode })
-    console.log('Dark Mode: ', darkMode)
   }
 
   if (darkMode) {
