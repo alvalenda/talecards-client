@@ -1,3 +1,5 @@
+import { TestDifficult } from '../utils/tests-variables'
+
 export type DiceRoll = {
   dice: number
   modifier: number
@@ -11,14 +13,26 @@ export interface DiceHundredRoll {
 }
 
 export interface RollTestResult extends DiceHundredRoll {
+  difficult: TestDifficult
   modifier: Modifier
   outcome: string
   sl: number
   target: number
 }
 
+export interface RollCombatTestResult extends RollTestResult {
+  advantage: Advantage
+}
+
 export interface RollTestPayload extends DiceHundredRoll {
-  target?: number
+  target: number
+  difficult: TestDifficult
+  modifier: Modifier
+}
+
+export interface RollCombatTestPayload extends RollTestPayload {
+  target: number
+  advantage: Advantage
 }
 
 export type Modifier =
