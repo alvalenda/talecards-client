@@ -3,9 +3,6 @@ export type DiceRoll = {
   modifier: number
   result: number
   type: string
-
-  roll: () => void
-  getResult: () => number
 }
 
 export interface DiceHundredRoll {
@@ -25,6 +22,10 @@ export interface RollTestPayload extends DiceHundredRoll {
 }
 
 export type Modifier =
+  | -100
+  | -90
+  | -80
+  | -70
   | -60
   | -50
   | -40
@@ -38,3 +39,9 @@ export type Modifier =
   | 40
   | 50
   | 60
+  | 70
+  | 80
+  | 90
+  | 100
+
+export type Advantage = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10
