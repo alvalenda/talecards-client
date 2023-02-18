@@ -9,17 +9,23 @@ export const testDifficult: TestDifficult[] = [
 ]
 
 export const testSuccessOutcomes: TestOutcome[] = [
-  { sl: [0, 1], outcome: 'Sucesso Marginal' },
-  { sl: [2, 3], outcome: 'Sucesso' },
-  { sl: [4, 5], outcome: 'Sucesso Impressionante' },
-  { sl: [6], outcome: 'Sucesso Extraordinário' },
+  { sl: 0, outcome: 'Sucesso Marginal' },
+  { sl: 1, outcome: 'Sucesso Marginal' },
+  { sl: 2, outcome: 'Sucesso' },
+  { sl: 3, outcome: 'Sucesso' },
+  { sl: 4, outcome: 'Sucesso Impressionante' },
+  { sl: 5, outcome: 'Sucesso Impressionante' },
+  { sl: 6, outcome: 'Sucesso Extraordinário' },
 ]
 
 export const testFailureOutcomes: TestOutcome[] = [
-  { sl: [0, -1], outcome: 'Falha Marginal' },
-  { sl: [-2, -3], outcome: 'Falha' },
-  { sl: [-4, -5], outcome: 'Falha Desastrosa' },
-  { sl: [-6], outcome: 'Falha Catastrófica' },
+  { sl: 0, outcome: 'Falha Marginal' },
+  { sl: -1, outcome: 'Falha Marginal' },
+  { sl: -2, outcome: 'Falha' },
+  { sl: -3, outcome: 'Falha' },
+  { sl: -4, outcome: 'Falha Desastrosa' },
+  { sl: -5, outcome: 'Falha Desastrosa' },
+  { sl: -6, outcome: 'Falha Catastrófica' },
 ]
 
 export const testDifficultOptions = testDifficult.map((difficult) => ({
@@ -28,7 +34,7 @@ export const testDifficultOptions = testDifficult.map((difficult) => ({
 }))
 
 export type TestOutcome = {
-  sl: number[]
+  sl: number
   outcome: string
 }
 

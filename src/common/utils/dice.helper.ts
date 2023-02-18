@@ -14,32 +14,24 @@ export const diceTestHelper = (
   diceRoll: Required<RollTestPayload>,
   modifier: Modifier = 0
 ): RollTestResult => {
-  const testResult: RollTestResult = {
+  let testResult: RollTestResult = {
     ...diceRoll,
     modifier,
     outcome: '',
     sl: 0,
   }
 
-  testResult.target = 50 + testResult.modifier
+  testResult.target += testResult.modifier
   testResult.sl = (testResult.target - testResult.result) / 10
 
-  testResult.outcome = testOutcomeHelper(testResult.sl).outcome
+  testResult = { ...testResult, ...testOutcomeHelper(testResult.sl) }
 
-  if (
-    testResult.sl < 0 &&
-    testResult.dices.tens === 0 &&
-    testResult.dices.ones <= 5
-  ) {
-    testResult.outcome = 'SUCESSO'
+  if (testResult.sl < 0 && testResult.result < 6) {
+    testResult.outcome = 'Sucesso Automático'
   }
 
-  if (
-    testResult.sl >= 0 &&
-    testResult.dices.tens === 9 &&
-    testResult.dices.ones >= 6
-  ) {
-    testResult.outcome = 'FALHA'
+  if (testResult.sl > 0 && testResult.result > 95) {
+    testResult.outcome = 'Falha Automática'
   }
 
   if (testResult.dices.tens === testResult.dices.ones) {
@@ -71,32 +63,16 @@ export const diceHundredRoll = (): DiceHundredRoll => {
 }
 
 export const testOutcomeHelper = (sl: number): TestOutcome => {
-  const realSl =
-    Math.floor(sl) > 6 ? 6 : Math.floor(sl) < -6 ? -6 : Math.floor(sl)
+  let data: TestOutcome
 
-  console.log(realSl)
+  const realSl = sl > 6 ? 6 : sl < -6 ? -6 : parseInt(`${sl}`.split('.')[0])
 
   if (sl > 0) {
-    const data = testSuccessOutcomes.find((outcome) => {
-      return outcome.sl.includes(realSl)
-    })
-
-    if (!data) {
-      console.error('Test outcome not found')
-      return { sl: [0], outcome: 'Sucesso' }
-    }
-
-    return data
+    data = testSuccessOutcomes[realSl]
+  } else {
+    data = testFailureOutcomes[Math.abs(realSl)]
   }
-
-  const data = testFailureOutcomes.find((outcome) => {
-    return outcome.sl.includes(realSl)
-  })
-
-  if (!data) {
-    console.error('Test outcome not found')
-    return { sl: [0], outcome: 'Falha' }
-  }
+  data.sl = realSl
 
   return data
 }
