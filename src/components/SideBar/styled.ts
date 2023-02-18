@@ -145,9 +145,9 @@ export const UserMenuContainer = styled.div<SidebarContainerProps>`
   padding: 10px 0;
   padding-left: ${({ expanded }) => (expanded === 'true' ? '0' : '2px')};
   margin-top: 10px;
-  box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2);
-  /* box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2); */
-  /* border-top: 1px solid ${({ theme }) => theme.colors.secondary}; */
+  border-top: 1px solid rgba(155, 155, 155, 0.5);
+  /* box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.2), 0 0 5px 0 rgba(0, 0, 0, 0.2); */
+
   width: ${({ expanded }) => (expanded === 'true' ? '200px' : '50px')};
   z-index: 1;
 
