@@ -1,46 +1,80 @@
 import {
+  Advantage,
+  RollCombatTestPayload,
   DiceHundredRoll,
   Modifier,
+  RollCombatTestResult,
   RollTestPayload,
   RollTestResult,
 } from '../types/dice-roll'
 import {
+  testDifficult,
+  TestDifficult,
   testFailureOutcomes,
   TestOutcome,
   testSuccessOutcomes,
 } from './tests-variables'
 
 export const diceTestHelper = (
-  diceRoll: Required<RollTestPayload>,
-  modifier: Modifier = 0
+  diceRoll: Required<RollTestPayload>
 ): RollTestResult => {
   let testResult: RollTestResult = {
     ...diceRoll,
-    modifier,
     outcome: '',
     sl: 0,
   }
 
-  testResult.target += testResult.modifier
+  testResult.target += testResult.modifier + testResult.difficult.modifier
   testResult.sl = (testResult.target - testResult.result) / 10
 
   testResult = { ...testResult, ...testOutcomeHelper(testResult.sl) }
 
-  if (testResult.sl < 0 && testResult.result < 6) {
-    testResult.outcome = 'Sucesso Automático'
-  }
-
-  if (testResult.sl > 0 && testResult.result > 95) {
-    testResult.outcome = 'Falha Automática'
-  }
-
-  if (testResult.dices.tens === testResult.dices.ones) {
-    testResult.outcome.substring(0, 5) === 'Falha'
-      ? (testResult.outcome += ' Crítica')
-      : (testResult.outcome += ' Crítico')
-  }
+  setAutoSuccessAndFailure(testResult)
+  setDHundredCritical(testResult)
 
   return testResult
+}
+
+export const diceHundredCombatTestHelper = (
+  diceRoll: RollCombatTestPayload
+): RollCombatTestResult => {
+  let combatTest: RollCombatTestResult = {
+    ...diceRoll,
+
+    outcome: '',
+    sl: 0,
+  }
+
+  combatTest.target +=
+    combatTest.modifier +
+    combatTest.difficult.modifier +
+    combatTest.advantage * 10
+  combatTest.sl = (combatTest.target - combatTest.result) / 10
+
+  combatTest = { ...combatTest, ...testOutcomeHelper(combatTest.sl) }
+
+  setAutoSuccessAndFailure(combatTest)
+  setDHundredCritical(combatTest)
+
+  return combatTest
+}
+
+const setAutoSuccessAndFailure = (test: RollTestResult): void => {
+  if (test.sl <= 0 && test.result < 6) {
+    test.outcome = 'Sucesso Automático'
+  }
+
+  if (test.sl >= 0 && test.result > 95) {
+    test.outcome = 'Falha Automática'
+  }
+}
+
+const setDHundredCritical = (test: RollTestResult): void => {
+  if (test.dices.tens === test.dices.ones) {
+    test.outcome.substring(0, 5) === 'Falha'
+      ? (test.outcome += ' Crítica')
+      : (test.outcome += ' Crítico')
+  }
 }
 
 export const diceHundredRoll = (): DiceHundredRoll => {
@@ -65,12 +99,15 @@ export const diceHundredRoll = (): DiceHundredRoll => {
 export const testOutcomeHelper = (sl: number): TestOutcome => {
   let data: TestOutcome
 
-  const realSl = sl > 6 ? 6 : sl < -6 ? -6 : parseInt(`${sl}`.split('.')[0])
+  const realSl = parseInt(`${sl}`.split('.')[0])
 
-  if (sl > 0) {
-    data = testSuccessOutcomes[realSl]
+  if (sl >= 0) {
+    data = realSl > 6 ? testSuccessOutcomes[6] : testSuccessOutcomes[realSl]
   } else {
-    data = testFailureOutcomes[Math.abs(realSl)]
+    data =
+      realSl < -6
+        ? testSuccessOutcomes[6]
+        : testFailureOutcomes[Math.abs(realSl)]
   }
   data.sl = realSl
 
