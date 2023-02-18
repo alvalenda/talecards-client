@@ -1,3 +1,5 @@
+import { Modifier } from '../types/dice-roll'
+
 export const testDifficult: TestDifficult[] = [
   { difficult: 'very_easy', modifier: 60 },
   { difficult: 'easy', modifier: 40 },
@@ -40,10 +42,10 @@ export type TestOutcome = {
 
 export type TestDifficult = {
   difficult: Difficulties
-  modifier: number
+  modifier: Modifier
 }
 
-type Difficulties =
+export type Difficulties =
   | 'very_easy'
   | 'easy'
   | 'average'
