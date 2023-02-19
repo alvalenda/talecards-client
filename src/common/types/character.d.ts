@@ -74,7 +74,7 @@ export type SkillValue = {
 }
 
 export type Skill =
-  | 'Armas de Fogo'
+  | 'Armas À Distância'
   | 'Armas Brancas'
   | 'Abrir Fechaduras'
   | 'Apostar'
