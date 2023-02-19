@@ -5,13 +5,19 @@ export function MainContent({ section }: Props) {
     case 'section1':
       return (
         <MainContentContainer>
-          <MainContentTitle> Section 1 </MainContentTitle>
+          <MainContentTitle> Personagem </MainContentTitle>
+          {/* <CharacterSheet /> */}
+
+          {/* <CharacterSheetForm /> */}
         </MainContentContainer>
       )
     case 'section2':
       return (
         <MainContentContainer>
-          <MainContentTitle> Section 2 </MainContentTitle>
+          <MainContentTitle> Monstro </MainContentTitle>
+          {/* <MonsterSheet /> */}
+
+          {/* <MonsterSheetForm /> */}
         </MainContentContainer>
       )
     default:
