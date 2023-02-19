@@ -15,7 +15,7 @@ function App() {
       <ThemeProviderReducer>
         <GlobalStyle />
         <BrowserRouter>
-          {/* <Routes>
+          {/* 
             <Route path="/" element={<LoginPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="*" element={<LoginPage />} /> */}
@@ -39,7 +39,6 @@ function App() {
             </Routes>
             <OptionsBar />
           </AppContainer>
-          {/* </Routes> */}
         </BrowserRouter>
       </ThemeProviderReducer>
     </TalecardsProvider>
