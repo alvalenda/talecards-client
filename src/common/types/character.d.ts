@@ -36,8 +36,16 @@ export type Attributes = {
 
 export type AttributeValue = {
   baseValue: number
+  advances?: number
+}
+
+export type Characteristics = {
+  [key in Characteristic]: CharacteristicValue
+}
+
+export type CharacteristicValue = {
+  baseValue: number
   advances: number
-  total: number
 }
 
 export type Characteristic =
@@ -69,8 +77,7 @@ export type Skills = {
 export type SkillValue = {
   keyAtribute: Attribute
   advances: number
-  total: number
-  specializations?: string[]
+  specialization?: string
 }
 
 export type Skill =
