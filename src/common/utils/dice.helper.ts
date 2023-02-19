@@ -1,15 +1,11 @@
 import {
-  Advantage,
-  RollCombatTestPayload,
   DiceHundredRoll,
-  Modifier,
+  RollCombatTestPayload,
   RollCombatTestResult,
   RollTestPayload,
   RollTestResult,
 } from '../types/dice-roll'
 import {
-  testDifficult,
-  TestDifficult,
   testFailureOutcomes,
   TestOutcome,
   testSuccessOutcomes,
