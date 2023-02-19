@@ -1,11 +1,18 @@
-import { MainContentContainer, MainContentTitle } from './styled'
+import { MonsterSheet } from '../shared/MonsterSheet'
+import {
+  MainContentContainer,
+  MainContentTitle,
+  MainContentTitleContainer,
+} from './styled'
 
 export function MainContent({ section }: Props) {
   switch (section) {
     case 'section1':
       return (
         <MainContentContainer>
-          <MainContentTitle> Personagem </MainContentTitle>
+          <MainContentTitleContainer>
+            <MainContentTitle> Personagem </MainContentTitle>
+          </MainContentTitleContainer>
           {/* <CharacterSheet /> */}
 
           {/* <CharacterSheetForm /> */}
@@ -14,8 +21,10 @@ export function MainContent({ section }: Props) {
     case 'section2':
       return (
         <MainContentContainer>
-          <MainContentTitle> Monstro </MainContentTitle>
-          {/* <MonsterSheet /> */}
+          <MainContentTitleContainer>
+            <MainContentTitle> Monstro </MainContentTitle>
+          </MainContentTitleContainer>
+          <MonsterSheet />
 
           {/* <MonsterSheetForm /> */}
         </MainContentContainer>
@@ -23,7 +32,9 @@ export function MainContent({ section }: Props) {
     default:
       return (
         <MainContentContainer>
-          <MainContentTitle> Home </MainContentTitle>
+          <MainContentTitleContainer>
+            <MainContentTitle> Home </MainContentTitle>
+          </MainContentTitleContainer>
         </MainContentContainer>
       )
   }
