@@ -2,7 +2,7 @@ export interface Character {
   id?: string
   name: string
   description: string
-  attributes: Array<Attributes>
+  attributes: Attributes
 }
 
 export interface Player extends Character {
@@ -20,95 +20,152 @@ export interface Player extends Character {
 export interface NPC extends Character {}
 
 export interface Monster extends Character {
+  attributes: Characteristics
   skills?: Skills[]
-  talents?: Talents[]
+  talents?: Talents
   traits: Traits[]
   optionalTraits?: OptionalTraits[]
   specialAbilities?: SpecialAbility[]
   weapons?: Weapons[]
   armors?: Armors
-  description: string
 }
 
-export type Attributes = {
-  [key in Attribute]: AttributeValue
-}
+// chave deve estar em Attribute
+export type Attributes = AttributeValue[]
 
 export type AttributeValue = {
+  name: Attribute | Characteristic
+  name_br: AttributeBR | CharacteristicBR
   baseValue: number
   advances?: number
-  short: AttributeShortValue
+  short: AttributeShort | CharacteristicShort
 }
 
-export type Characteristics = {
-  [key in Characteristic]: CharacteristicValue
-}
+export type Characteristics = CharacteristicValue[]
 
 export type CharacteristicValue = {
+  name: Characteristic
+  name_br: CharacteristicBR
   baseValue: number
   advances: number
-  short: CharacteristicShortValue
+  short: CharacteristicShort | 'M' | 'W'
 }
 
-export type Characteristic = [
-  'CombateArmado',
-  'Balística',
-  'Força',
-  'Robustez',
-  'Iniciativa',
-  'Agilidade',
-  'Dextreza',
-  'Inteligência',
-  'Vontade',
-  'Carisma'
-]
+export type Characteristic =
+  | 'Weapon Skill'
+  | 'Ballistic Skill'
+  | 'Strength'
+  | 'Toughness'
+  | 'Iniciative'
+  | 'Agility'
+  | 'Dexterity'
+  | 'Intelligence'
+  | 'Will Power'
+  | 'Fellowship'
+  | 'Movement'
+  | 'Wounds'
 
-export type Attribute = [
-  ...Characteristic,
-  'Ferimentos',
-  'Destino',
-  'Sorte',
-  'Resiliência',
-  'Determinação',
-  'Motivação',
-  'Movimento'
-]
+export type CharacteristicBR =
+  | 'Combate Armado'
+  | 'Balística'
+  | 'Força'
+  | 'Robustez'
+  | 'Iniciativa'
+  | 'Agilidade'
+  | 'Dextreza'
+  | 'Inteligência'
+  | 'Vontade'
+  | 'Carisma'
+  | 'Movimento'
+  | 'Ferimentos'
 
-type CharacteristicShortValue = [
-  'WS',
-  'BS',
-  'S',
-  'T',
-  'I',
-  'Ag',
-  'Dex',
-  'Int',
-  'WP',
-  'Fel'
-]
+export type Attribute =
+  | 'Fate'
+  | 'Fortune'
+  | 'Resilience'
+  | 'Resolve'
+  | 'Motivation'
 
-type AttributeShortValue = [
-  ...CharacteristicShortValue,
-  'W',
-  'Fate',
-  'Luck',
-  'Res',
-  'Det',
-  'Mot',
-  'M'
-]
+export type AttributeBR =
+  | 'Destino'
+  | 'Sorte'
+  | 'Resiliência'
+  | 'Determinação'
+  | 'Motivação'
 
-export type Skills = {
-  [key in Skill]: SkillValue
-}
+type CharacteristicShort =
+  | 'WS'
+  | 'BS'
+  | 'S'
+  | 'T'
+  | 'I'
+  | 'Ag'
+  | 'Dex'
+  | 'Int'
+  | 'WP'
+  | 'Fel'
 
-export type SkillValue = {
-  keyAtribute: Attribute
+type AttributeShort = 'W' | 'Fate' | 'For' | 'Res' | 'Det' | 'Mot' | 'M'
+
+export type Skills = Skill[]
+
+export type Skill = {
+  name: SkillName | string
+  name_br: SkillName | string
+  keyAtribute: Omit<Characteristic, 'Movement' | 'Wounds'>
   advances: number
   specialization?: string
 }
 
-export type Skill =
+export type SkillName =
+  | 'Animal Care'
+  | 'Animal Training'
+  | 'Athletics'
+  | 'Art'
+  | 'Bribery'
+  | 'Channelling'
+  | 'Charm'
+  | 'Charm Animal'
+  | 'Climb'
+  | 'Consume Alcohol'
+  | 'Cool'
+  | 'Dodge'
+  | 'Drive'
+  | 'Endurance'
+  | 'Entertain'
+  | 'Evaluate'
+  | 'Gamble'
+  | 'Gossip'
+  | 'Heal'
+  | 'Haggle'
+  | 'Intimidate'
+  | 'Intuition'
+  | 'Language'
+  | 'Leadership'
+  | 'Lore'
+  | 'Melee'
+  | 'Navigation'
+  | 'Outdoor Survival'
+  | 'Perception'
+  | 'Perform'
+  | 'Pick Lock'
+  | 'Play'
+  | 'Pray'
+  | 'Ranged'
+  | 'Research'
+  | 'Ride'
+  | 'Row'
+  | 'Secret Signs'
+  | 'Set Trap'
+  | 'Sleight of Hand'
+  | 'Stealth'
+  | 'Swim'
+  | 'Track'
+  | 'Trade'
+  | 'Sail'
+  | 'Survival'
+
+export type SkillNameBr =
   | 'Armas À Distância'
   | 'Armas Brancas'
   | 'Abrir Fechaduras'
@@ -155,15 +212,22 @@ export type Skill =
   | 'Treinar Animais'
   | 'Velejar'
 
-export type Talents = {
-  [key in Talent]: TalentValue
-}
+export type Talents = Talent[]
 
-export type TalentValue = {
-  name: string
+export type Talent = {
+  name: TalentKey
+  name_br: string
   max: number
   tests?: string[]
   description: string
 }
 
-export type Talent = 'Aparência' | 'Conhecimento' | 'Conhecimento Mágico'
+export type TalentKey =
+  | 'Aparência'
+  | 'Conhecimento'
+  | 'Conhecimento Mágico'
+  | 'Territorial'
+  | 'Vigor'
+
+type Notes = string
+type History = string
