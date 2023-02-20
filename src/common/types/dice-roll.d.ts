@@ -1,4 +1,4 @@
-import { TestDifficult } from '../utils/tests-variables'
+import { TestDifficult } from '../utils/test-objects'
 
 export type DiceRoll = {
   dice: number
