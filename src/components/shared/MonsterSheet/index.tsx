@@ -17,8 +17,9 @@ import {
   MonsterSheetDescriptionValue,
 } from './styled'
 import { Monster } from '@/common/types/character'
+import { MonsterSampleSheet } from '@/common/utils/monster-objects'
 
-export function MonsterSheet(monster: Monster = defaultMonster) {
+export function MonsterSheet({ monster }: Props = defaultProps) {
   return (
     <>
       <MonsterSheetCard>
@@ -156,24 +157,10 @@ export function MonsterSheet(monster: Monster = defaultMonster) {
   )
 }
 
-const defaultMonster: Monster = {
-  name: 'Monster Sample',
-  attributes: [
-    { Movimento: { baseValue: 3, advances: 0, short: 'M' } },
-    { CombateArmado: { baseValue: 32, advances: 0, short: 'WS' } },
-    { Balística: { baseValue: 28, advances: 0, short: 'BS' } },
-    { Força: { baseValue: 40, advances: 0, short: 'S' } },
-    { Robustez: { baseValue: 42, advances: 0, short: 'T' } },
-    { Iniciativa: { baseValue: 30, advances: 0, short: 'I' } },
-    { Agilidade: { baseValue: 33, advances: 0, short: 'Ag' } },
-    { Destreza: { baseValue: 40, advances: 0, short: 'Dex' } },
-    { Inteligência: { baseValue: 30, advances: 0, short: 'Int' } },
-    { Vontade: { baseValue: 30, advances: 0, short: 'WP' } },
-    { Carisma: { baseValue: 30, advances: 0, short: 'Fel' } },
-    { Ferimentos: { baseValue: 15, advances: 0, short: 'W' } },
-  ],
-  traits: [],
-  skills: [],
-  talents: [],
-  description: 'Um monstro que vive na floresta',
+type Props = {
+  monster?: Monster
+}
+
+const defaultProps = {
+  monster: MonsterSampleSheet,
 }
