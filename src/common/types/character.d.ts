@@ -1,12 +1,12 @@
 export interface Character {
   id?: string
   name: string
-  avatar: string
   description: string
-  attributes: Attributes
+  attributes: Array<Attributes>
 }
 
 export interface Player extends Character {
+  avatar: string
   skills: Skills
   talents: Talents
   weapons: Weapons
@@ -20,12 +20,12 @@ export interface Player extends Character {
 export interface NPC extends Character {}
 
 export interface Monster extends Character {
-  skills?: Skills
-  talents?: Talents
-  traits: Traits
-  optionalTraits?: OptionalTraits
+  skills?: Skills[]
+  talents?: Talents[]
+  traits: Traits[]
+  optionalTraits?: OptionalTraits[]
   specialAbilities?: SpecialAbility[]
-  weapons?: Weapons
+  weapons?: Weapons[]
   armors?: Armors
   description: string
 }
@@ -37,6 +37,7 @@ export type Attributes = {
 export type AttributeValue = {
   baseValue: number
   advances?: number
+  short: AttributeShortValue
 }
 
 export type Characteristics = {
@@ -46,29 +47,56 @@ export type Characteristics = {
 export type CharacteristicValue = {
   baseValue: number
   advances: number
+  short: CharacteristicShortValue
 }
 
-export type Characteristic =
-  | 'WS'
-  | 'BS'
-  | 'S'
-  | 'T'
-  | 'I'
-  | 'Ag'
-  | 'Dex'
-  | 'Int'
-  | 'WP'
-  | 'Fel'
+export type Characteristic = [
+  'CombateArmado',
+  'Balística',
+  'Força',
+  'Robustez',
+  'Iniciativa',
+  'Agilidade',
+  'Dextreza',
+  'Inteligência',
+  'Vontade',
+  'Carisma'
+]
 
-export type Attribute =
-  | Characteristic
-  | 'Ferimentos'
-  | 'Destino'
-  | 'Sorte'
-  | 'Resiliência'
-  | 'Determinação'
-  | 'Motivação'
-  | 'Movimento'
+export type Attribute = [
+  ...Characteristic,
+  'Ferimentos',
+  'Destino',
+  'Sorte',
+  'Resiliência',
+  'Determinação',
+  'Motivação',
+  'Movimento'
+]
+
+type CharacteristicShortValue = [
+  'WS',
+  'BS',
+  'S',
+  'T',
+  'I',
+  'Ag',
+  'Dex',
+  'Int',
+  'WP',
+  'Fel'
+]
+
+type AttributeShortValue = [
+  ...CharacteristicShortValue,
+  'W',
+  'Fate',
+  'Luck',
+  'Res',
+  'Det',
+  'Mot',
+  'M'
+]
 
 export type Skills = {
   [key in Skill]: SkillValue
