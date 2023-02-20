@@ -1,18 +1,30 @@
 import React from 'react'
-import { MonsterSheetCard } from './styled'
+import {
+  MonsterSheetCard,
+  MonsterSheetCardName,
+  MonsterSheetCharacteristics,
+  MonsterSheetTraits,
+  MonsterSheetTraitItem,
+  MonsterSheetTraitLabel,
+  MonsterSheetTraitValue,
+  MonsterSheetSkills,
+  MonsterSheetSkillLabel,
+  MonsterSheetSkillValue,
+  MonsterSheetTalents,
+  MonsterSheetTalentLabel,
+  MonsterSheetTalentValue,
+  MonsterSheetDescription,
+  MonsterSheetDescriptionLabel,
+  MonsterSheetDescriptionValue,
+} from './styled'
 
 export function MonsterSheet({}: Props) {
-  // component for MonsterSheet in WFRP 4e system
-
-  /*
-  Melhor forma de mostrar as características por aqui. Dentro deste card terá um grid com as siglas das características e seus valores abaixo das siglas. Em seguida, um espaço para as Traits e Skills. E por fim, um espaço para descrição. Armadura é apresentada em Traits e as Armas em Traits Ofensivos, uma categoria separada contendo traits que são ataques. No final, pode haver uma área para Traits sugeridos para o monstro, como "Ferocious" ou "Fearless" ou "Frenzy" ou "Regeneration" ou "Tough" ou "Vulnerable to Magic" ou "Vulnerable to Fire" ou "Vulnerable to Cold" ou "Vulnerable to Poison" ou "Vulnerable to Disease" ou "Vulnerable to Light" ou "Vulnerable to Darkness" ou "Vulnerable to Sound" ou "Vulnerable to Light".
-  */
   return (
     <>
       <MonsterSheetCard>
-        <h2>Monster Name</h2>
+        <MonsterSheetCardName>Monster Sample</MonsterSheetCardName>
 
-        <div className="monster-sheet-card__characteristics">
+        <MonsterSheetCharacteristics>
           <div className="monster-sheet-card__characteristics__item">
             <span className="monster-sheet-card__characteristics__item__label">
               M
@@ -103,9 +115,42 @@ export function MonsterSheet({}: Props) {
               0
             </span>
           </div>
-        </div>
+        </MonsterSheetCharacteristics>
 
-        {/* traits agora */}
+        <MonsterSheetTraits>
+          <MonsterSheetTraitItem>
+            <MonsterSheetTraitLabel>Traços Ofensivos</MonsterSheetTraitLabel>
+            <MonsterSheetTraitValue>Arma (Espada)</MonsterSheetTraitValue>
+            <MonsterSheetTraitValue>Arma (Garra)</MonsterSheetTraitValue>
+          </MonsterSheetTraitItem>
+
+          <MonsterSheetTraitItem>
+            <MonsterSheetTraitLabel>Traços</MonsterSheetTraitLabel>
+            <MonsterSheetTraitValue>Armadura 1 (2)</MonsterSheetTraitValue>
+            <MonsterSheetTraitValue>Territorial</MonsterSheetTraitValue>
+            <MonsterSheetTraitValue>Morto-Vivo</MonsterSheetTraitValue>
+          </MonsterSheetTraitItem>
+        </MonsterSheetTraits>
+
+        <MonsterSheetSkills>
+          <MonsterSheetSkillLabel>Habilidades</MonsterSheetSkillLabel>
+          <MonsterSheetSkillValue>Percepção +3</MonsterSheetSkillValue>
+          <MonsterSheetSkillValue>Furtividade +5</MonsterSheetSkillValue>
+          <MonsterSheetSkillValue>Intimidação +6</MonsterSheetSkillValue>
+        </MonsterSheetSkills>
+
+        <MonsterSheetTalents>
+          <MonsterSheetTalentLabel>Talentos</MonsterSheetTalentLabel>
+          <MonsterSheetTalentValue>Ataque Furtivo</MonsterSheetTalentValue>
+          <MonsterSheetTalentValue>Ataque Surpresa</MonsterSheetTalentValue>
+        </MonsterSheetTalents>
+
+        <MonsterSheetDescription>
+          <MonsterSheetDescriptionLabel>Descrição</MonsterSheetDescriptionLabel>
+          <MonsterSheetDescriptionValue>
+            Um monstro que vive na floresta
+          </MonsterSheetDescriptionValue>
+        </MonsterSheetDescription>
       </MonsterSheetCard>
     </>
   )
