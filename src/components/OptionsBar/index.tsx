@@ -9,8 +9,8 @@ import {
   diceHundredCombatTestHelper,
   diceHundredRoll,
   diceTestHelper,
-} from '@/common/utils/dice.helper'
-import { testDifficult, TestDifficult } from '@/common/utils/tests-variables'
+} from '@/common/utils/helpers/dice.helper'
+import { testDifficult, TestDifficult } from '@/common/utils/test-objects'
 import { OptionButton, OptionsBarContainer } from './styled'
 
 export function OptionsBar() {
