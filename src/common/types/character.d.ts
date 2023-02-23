@@ -24,10 +24,10 @@ export interface Monster extends Character {
   skills?: Skills[]
   talents?: Talents
   traits: Traits[]
-  optionalTraits?: OptionalTraits[]
-  specialAbilities?: SpecialAbility[]
+  optionalTraits?: Traits[]
+  specialAbilities?: string[]
   weapons?: Weapons[]
-  armors?: Armors
+  armors?: Armors[]
 }
 
 // chave deve estar em Attribute
@@ -215,19 +215,39 @@ export type SkillNameBr =
 export type Talents = Talent[]
 
 export type Talent = {
-  name: TalentKey
+  name: TalentName
   name_br: string
   max: number
   tests?: string[]
   description: string
 }
 
-export type TalentKey =
+export type TalentName =
   | 'Aparência'
   | 'Conhecimento'
   | 'Conhecimento Mágico'
   | 'Territorial'
   | 'Vigor'
+
+type TalentNameBr =
+  | 'Aparência'
+  | 'Conhecimento'
+  | 'Conhecimento Mágico'
+  | 'Territorial'
+  | 'Vigor'
+
+export type Traits = Trait[]
+export type Trait = {
+  name: string
+  name_br: string
+  description: string
+  characteristics_mod?: {
+    name: Characteristic
+    value: number
+  }[]
+
+  get name(): string
+}
 
 type Notes = string
 type History = string
