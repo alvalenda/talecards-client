@@ -3,6 +3,7 @@ import { CharacteristicShort } from './characteristics'
 export type Trait = {
   name: TraitName
   name_br: TraitNameBR
+  attack: boolean
   difficulty?: number
   feature?: string
   number?: number
@@ -13,7 +14,7 @@ export type Trait = {
     short: CharacteristicShort | 'M' | 'W'
     value: number
   }[]
-  description: string
+  description?: string
 
   get getTrait(): string
 }
