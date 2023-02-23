@@ -5,7 +5,7 @@ export const MonsterSampleSheet: Monster = {
   id: '0',
   name: 'Monster Sample',
   description: 'Um monstro que vive na floresta',
-  attributes: characteristicsSample,
+  attributes: [...characteristicsSample],
   traits: [],
   skills: [],
   talents: [],
