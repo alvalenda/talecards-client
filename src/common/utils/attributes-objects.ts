@@ -1,4 +1,10 @@
-import { Attribute, Characteristic } from '../types/attributes'
+import { FaNewspaper } from 'react-icons/fa'
+import {
+  Attribute,
+  AttributeShort,
+  Characteristic,
+  CharacteristicShort,
+} from '../types/attributes'
 
 export const characteristicsBlank: Characteristic[] = [
   {
@@ -204,11 +210,23 @@ export const attributesBlank: Attribute[] = [
     advances: 0,
     short: 'Res',
   },
-  {
-    name: 'Motivation',
-    name_br: 'Motivação',
-    baseValue: 0,
-    advances: 0,
-    short: 'Mot',
-  },
 ]
+
+export const attrRef = new Map<CharacteristicShort | AttributeShort, number>([
+  ['M', 0],
+  ['WS', 1],
+  ['BS', 2],
+  ['S', 3],
+  ['T', 4],
+  ['I', 5],
+  ['Ag', 6],
+  ['Dex', 7],
+  ['Int', 8],
+  ['WP', 9],
+  ['Fel', 10],
+  ['W', 11],
+  ['Fate', 12],
+  ['For', 13],
+  ['Res', 14],
+  ['Res', 15],
+])
