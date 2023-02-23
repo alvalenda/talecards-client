@@ -33,17 +33,5 @@ export interface Monster extends Character {
   armors?: Armor[]
 }
 
-export type Trait = {
-  name: string
-  name_br: string
-  characteristics_mod?: {
-    name: Characteristic
-    value: number
-  }[]
-  description: string
-
-  get getTrait(): string
-}
-
 type Notes = string
 type History = string
