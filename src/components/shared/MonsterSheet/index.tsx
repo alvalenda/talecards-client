@@ -35,8 +35,8 @@ export function MonsterSheet(props: Props) {
         <MonsterSheetCardName>Monster Sample</MonsterSheetCardName>
 
         <MonsterSheetCharacteristics>
-          {monster?.attributes.map((attribute) => (
-            <div className="monster-sheet-card__characteristics__item">
+          {monster?.attributes.map((attribute, i) => (
+            <div className="monster-sheet-card__characteristics__item" key={i}>
               <span className="monster-sheet-card__characteristics__item__label">
                 {attribute.short}
               </span>
@@ -45,97 +45,6 @@ export function MonsterSheet(props: Props) {
               </span>
             </div>
           ))}
-
-          {/* <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              M
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              WS
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              BS
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              S
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              T
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              Ag
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              Int
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              WP
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              Fel
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              A
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div>
-          <div className="monster-sheet-card__characteristics__item">
-            <span className="monster-sheet-card__characteristics__item__label">
-              W
-            </span>
-            <span className="monster-sheet-card__characteristics__item__value">
-              0
-            </span>
-          </div> */}
         </MonsterSheetCharacteristics>
 
         <MonsterSheetTraits>
