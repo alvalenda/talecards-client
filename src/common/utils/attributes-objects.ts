@@ -1,6 +1,6 @@
-import { Attributes, Characteristics } from '../types/character'
+import { Attribute, Characteristic } from '../types/attributes'
 
-export const characteristicsBlank: Characteristics = [
+export const characteristicsBlank: Characteristic[] = [
   {
     name: 'Movement',
     name_br: 'Movimento',
@@ -37,7 +37,7 @@ export const characteristicsBlank: Characteristics = [
     short: 'T',
   },
   {
-    name: 'Iniciative',
+    name: 'Initiative',
     name_br: 'Iniciativa',
     baseValue: 0,
     advances: 0,
@@ -52,7 +52,7 @@ export const characteristicsBlank: Characteristics = [
   },
   {
     name: 'Dexterity',
-    name_br: 'Dextreza',
+    name_br: 'Destreza',
     baseValue: 0,
     advances: 0,
     short: 'Dex',
@@ -87,7 +87,7 @@ export const characteristicsBlank: Characteristics = [
   },
 ]
 
-export const characteristicsSample: Characteristics = [
+export const characteristicsSample: Characteristic[] = [
   {
     name: 'Movement',
     name_br: 'Movimento',
@@ -124,7 +124,7 @@ export const characteristicsSample: Characteristics = [
     short: 'T',
   },
   {
-    name: 'Iniciative',
+    name: 'Initiative',
     name_br: 'Iniciativa',
     baseValue: 30,
     advances: 0,
@@ -139,7 +139,7 @@ export const characteristicsSample: Characteristics = [
   },
   {
     name: 'Dexterity',
-    name_br: 'Dextreza',
+    name_br: 'Destreza',
     baseValue: 40,
     advances: 0,
     short: 'Dex',
@@ -174,7 +174,7 @@ export const characteristicsSample: Characteristics = [
   },
 ]
 
-export const attributesBlank: Attributes = [
+export const attributesBlank: Attribute[] = [
   ...characteristicsBlank,
   {
     name: 'Fate',

@@ -27,7 +27,7 @@ export const playerSample: Player = {
     {
       name: 'Animal Care',
       name_br: 'Lidar com Animais',
-      keyAtribute: 'Intelligence',
+      keyAttribute: 'Intelligence',
       advances: 0,
       specialization: '',
     },
