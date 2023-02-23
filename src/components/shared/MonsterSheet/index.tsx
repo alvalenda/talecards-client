@@ -19,14 +19,34 @@ import {
 import { Monster } from '@/common/types/character'
 import { MonsterSampleSheet } from '@/common/utils/monster-objects'
 
-export function MonsterSheet({ monster }: Props = defaultProps) {
+const defaultProps = {
+  monster: MonsterSampleSheet,
+}
+
+export function MonsterSheet(props: Props) {
+  const monster: Monster = props.monster ?? defaultProps.monster
+
+  // console.log(props.monster)
+  // console.log(defaultProps.monster)
+
   return (
     <>
       <MonsterSheetCard>
         <MonsterSheetCardName>Monster Sample</MonsterSheetCardName>
 
         <MonsterSheetCharacteristics>
-          <div className="monster-sheet-card__characteristics__item">
+          {monster?.attributes.map((attribute) => (
+            <div className="monster-sheet-card__characteristics__item">
+              <span className="monster-sheet-card__characteristics__item__label">
+                {attribute.short}
+              </span>
+              <span className="monster-sheet-card__characteristics__item__value">
+                {attribute.baseValue}
+              </span>
+            </div>
+          ))}
+
+          {/* <div className="monster-sheet-card__characteristics__item">
             <span className="monster-sheet-card__characteristics__item__label">
               M
             </span>
@@ -115,7 +135,7 @@ export function MonsterSheet({ monster }: Props = defaultProps) {
             <span className="monster-sheet-card__characteristics__item__value">
               0
             </span>
-          </div>
+          </div> */}
         </MonsterSheetCharacteristics>
 
         <MonsterSheetTraits>
@@ -159,8 +179,4 @@ export function MonsterSheet({ monster }: Props = defaultProps) {
 
 type Props = {
   monster?: Monster
-}
-
-const defaultProps = {
-  monster: MonsterSampleSheet,
 }
