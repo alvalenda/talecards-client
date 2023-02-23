@@ -42,19 +42,11 @@ export type CharacteristicBR =
   | 'Movimento'
   | 'Ferimentos'
 
-export type AttributeName =
-  | 'Fate'
-  | 'Fortune'
-  | 'Resilience'
-  | 'Resolve'
-  | 'Motivation'
+export type AttributeName = 'Fate' | 'Fortune' | 'Resilience' | 'Resolve'
+// | 'Motivation'
 
-export type AttributeBR =
-  | 'Destino'
-  | 'Sorte'
-  | 'Resiliência'
-  | 'Determinação'
-  | 'Motivação'
+export type AttributeBR = 'Destino' | 'Sorte' | 'Resiliência' | 'Determinação'
+// | 'Motivação'
 
 export type CharacteristicShort =
   | 'WS'
@@ -68,4 +60,4 @@ export type CharacteristicShort =
   | 'WP'
   | 'Fel'
 
-export type AttributeShort = 'W' | 'Fate' | 'For' | 'Res' | 'Det' | 'Mot' | 'M'
+export type AttributeShort = 'W' | 'Fate' | 'For' | 'Res' | 'Det' | 'M'
