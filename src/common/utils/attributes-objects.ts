@@ -1,4 +1,3 @@
-import { FaNewspaper } from 'react-icons/fa'
 import {
   Attribute,
   AttributeShort,
