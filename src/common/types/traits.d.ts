@@ -25,7 +25,7 @@ type TraitName =
   | 'Champion'
   | 'Chill Grasp'
   | 'Clever'
-  | 'Cold-Blooded'
+  | 'Cold-blooded'
   | 'Constrictor'
   | 'Construct'
   | 'Corrosive Blood'
@@ -179,12 +179,10 @@ type TraitType =
   | ['Various', string]
   | ['Including TB', number]
   | ['Number', number]
+  | ['Intensity', 'Minor' | 'Major']
   | ['TRANSFORM', TransformModifier]
 
-type TransformModifier = {
-  short: CharacteristicShort | 'M' | 'W'
-  value: number
-}[]
+type TransformModifier = [CharacteristicShort | 'M' | 'W', number][]
 
 /* Traits
 Afraid (Target)
