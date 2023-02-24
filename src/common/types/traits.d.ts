@@ -9,7 +9,8 @@ export type Trait = {
   number?: number
   range?: string
   rating?: number
-  type?: TraitType
+  target?: string
+  type?: TraitType[]
   characteristics_mod?: {
     short: CharacteristicShort | 'M' | 'W'
     value: number
@@ -100,7 +101,7 @@ type TraitName =
 
 // string type options of traits names in portuguese br
 type TraitNameBR =
-  | 'Amedrontado'
+  | 'Medo'
   | 'Anfíbio'
   | 'Arbóreo'
   | 'Animosidade'
@@ -180,7 +181,14 @@ type TraitNameBR =
   | 'Arma'
   | 'Teia'
 
-type TraitType = 'Feature' | 'Rating' | 'Target' | 'Type' | 'Various' | 'NONE'
+type TraitType =
+  | 'Feature'
+  | 'Rating'
+  | 'Target'
+  | 'Type'
+  | 'Various'
+  | 'Including TB'
+  | 'TRANSFORM'
 
 /* Traits
 Afraid (Target)
