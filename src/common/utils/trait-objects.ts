@@ -5,15 +5,14 @@ export const traits: Trait[] = [
     name: 'Afraid',
     name_br: 'Medo',
     attack: false,
-    type: ['Target'],
-    target: 'Target',
+    types: [['Target', 'Chose One']],
     description: 'The creature gains Fear (0) to the Target.',
   },
   {
     name: 'Amphibious',
     name_br: 'Anfíbio',
     attack: false,
-    type: [],
+    types: [],
     description:
       'The creature adds its Agility Bonus to the SL of all Swim Tests and move at full Movement through water.',
   },
@@ -21,7 +20,7 @@ export const traits: Trait[] = [
     name: 'Arboreal',
     name_br: 'Arbóreo',
     attack: false,
-    type: [],
+    types: [],
     description:
       'The creature adds its Agility Bonus to the SL of all Climb and Stealth Tests.',
   },
@@ -29,16 +28,17 @@ export const traits: Trait[] = [
     name: 'Animosity',
     name_br: 'Animosidade',
     attack: false,
-    type: ['Target'],
-    target: 'Target',
+    types: [['Target', 'Chose One']],
     description: 'The creature dislikes the Target.',
   },
   {
     name: 'Armour',
     name_br: 'Armadura',
     attack: false,
-    type: ['Rating', 'Including TB'],
-    rating: 0,
+    types: [
+      ['Rating', 0],
+      ['Including TB', 0],
+    ],
     description:
       'The creature has Rating Armour Points on all Hit Locations. The number in brackets after the Rating is the creatures TB + Armour Points. Most damage is reduced by this number.',
   },
@@ -46,7 +46,7 @@ export const traits: Trait[] = [
     name: 'Belligerent',
     name_br: 'Beligerante',
     attack: false,
-    type: [],
+    types: [],
     description:
       'If the creature has more Advantage than its opponent, it is Immune to Psychology.',
   },
@@ -54,7 +54,7 @@ export const traits: Trait[] = [
     name: 'Bestial',
     name_br: 'Bestial',
     attack: false,
-    type: [],
+    types: [],
     description:
       'The creature fears fire and gains a Broken Condition if struck by it. It defends only with Dodge. If it loses more than half its Wounds, it will attempt to Flee. If protecting young or Territorial it enters Frenzy instead.',
   },
@@ -62,33 +62,71 @@ export const traits: Trait[] = [
     name: 'Big',
     name_br: 'Grande',
     attack: false,
-    type: ['TRANSFORM'],
-    characteristics_mod: [
-      {
-        short: 'S',
-        value: +10,
-      },
-      {
-        short: 'T',
-        value: +10,
-      },
-      {
-        short: 'Ag',
-        value: -5,
-      },
+    types: [
+      [
+        'TRANSFORM',
+        [
+          {
+            short: 'S',
+            value: +10,
+          },
+          {
+            short: 'T',
+            value: +10,
+          },
+          {
+            short: 'Ag',
+            value: -5,
+          },
+        ],
+      ],
     ],
   },
   {
     name: 'Bite',
     name_br: 'Mordida',
     attack: true,
-    type: ['Rating'],
-    rating: 0,
+    types: [['Rating', 0]],
     description:
       'The creature may make a Free Attack by spending 1 Advantage, inflicting Rating damage.',
   },
+  {
+    name: 'Blessed',
+    name_br: 'Abençoado',
+    attack: false,
+    types: [['Various', '']],
+    description:
+      'The creature is Blessed and can enact Blessings; the relevant deity is indicated in brackets.',
+  },
+  {
+    name: 'Bounce',
+    name_br: 'Ressalto',
+    attack: false,
+    types: [],
+    description:
+      'When Charging or Running, it doubles its Movement Characteristic and ignores all terrain.',
+  },
+  {
+    name: 'Breath',
+    name_br: 'Baforada',
+    attack: true,
+    types: [
+      ['Rating', 0],
+      ['Type', ''],
+    ],
+    description:
+      'When Charging or Running, it doubles its Movement Characteristic and ignores all terrain.',
+  },
+  {
+    name: 'Blessed',
+    name_br: 'Abençoado',
+    attack: false,
+    types: [],
+    description: '',
+  },
 ]
 
+// ! Página 135 Imperial Zoo
 /* Traits
 Afraid (Target)
 Amphibious

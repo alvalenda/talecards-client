@@ -4,17 +4,7 @@ export type Trait = {
   name: TraitName
   name_br: TraitNameBR
   attack: boolean
-  difficulty?: number
-  feature?: string
-  number?: number
-  range?: string
-  rating?: number
-  target?: string
-  type?: TraitType[]
-  characteristics_mod?: {
-    short: CharacteristicShort | 'M' | 'W'
-    value: number
-  }[]
+  types?: TraitType[]
   description?: string
 }
 // string options of traits names
@@ -111,7 +101,7 @@ type TraitNameBR =
   | 'Grande'
   | 'Mordida'
   | 'Abençoado'
-  | 'Ressaltar'
+  | 'Ressalto'
   | 'Baforada'
   | 'Bruto'
   | 'Campeão'
@@ -182,13 +172,19 @@ type TraitNameBR =
   | 'Teia'
 
 type TraitType =
-  | 'Feature'
-  | 'Rating'
-  | 'Target'
-  | 'Type'
-  | 'Various'
-  | 'Including TB'
-  | 'TRANSFORM'
+  | ['Feature', string]
+  | ['Rating', number]
+  | ['Target', string]
+  | ['Type', string]
+  | ['Various', string]
+  | ['Including TB', number]
+  | ['Number', number]
+  | ['TRANSFORM', TransformModifier]
+
+type TransformModifier = {
+  short: CharacteristicShort | 'M' | 'W'
+  value: number
+}[]
 
 /* Traits
 Afraid (Target)
