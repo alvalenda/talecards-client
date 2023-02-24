@@ -9,14 +9,12 @@ export type Trait = {
   number?: number
   range?: string
   rating?: number
-  type?: string
+  type?: TraitType
   characteristics_mod?: {
     short: CharacteristicShort | 'M' | 'W'
     value: number
   }[]
   description?: string
-
-  get getTrait(): string
 }
 // string options of traits names
 type TraitName =
@@ -182,6 +180,8 @@ type TraitNameBR =
   | 'Arma'
   | 'Teia'
 
+type TraitType = 'Feature' | 'Rating' | 'Target' | 'Type' | 'Various' | 'NONE'
+
 /* Traits
 Afraid (Target)
 Amphibious
@@ -260,7 +260,7 @@ Vampiric
 Venom (Difficulty)
 Vomit
 Ward (Rating)
-Wallcrawler
+Wall crawler
 Weapon (Rating)
 Web (Rating)
                         */
