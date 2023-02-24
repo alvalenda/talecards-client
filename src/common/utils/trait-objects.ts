@@ -1,4 +1,93 @@
-export const traits = []
+import { Trait } from '../types/traits'
+
+export const traits: Trait[] = [
+  {
+    name: 'Afraid',
+    name_br: 'Medo',
+    attack: false,
+    type: ['Target'],
+    target: 'Target',
+    description: 'The creature gains Fear (0) to the Target.',
+  },
+  {
+    name: 'Amphibious',
+    name_br: 'Anfíbio',
+    attack: false,
+    type: [],
+    description:
+      'The creature adds its Agility Bonus to the SL of all Swim Tests and move at full Movement through water.',
+  },
+  {
+    name: 'Arboreal',
+    name_br: 'Arbóreo',
+    attack: false,
+    type: [],
+    description:
+      'The creature adds its Agility Bonus to the SL of all Climb and Stealth Tests.',
+  },
+  {
+    name: 'Animosity',
+    name_br: 'Animosidade',
+    attack: false,
+    type: ['Target'],
+    target: 'Target',
+    description: 'The creature dislikes the Target.',
+  },
+  {
+    name: 'Armour',
+    name_br: 'Armadura',
+    attack: false,
+    type: ['Rating', 'Including TB'],
+    rating: 0,
+    description:
+      'The creature has Rating Armour Points on all Hit Locations. The number in brackets after the Rating is the creatures TB + Armour Points. Most damage is reduced by this number.',
+  },
+  {
+    name: 'Belligerent',
+    name_br: 'Beligerante',
+    attack: false,
+    type: [],
+    description:
+      'If the creature has more Advantage than its opponent, it is Immune to Psychology.',
+  },
+  {
+    name: 'Bestial',
+    name_br: 'Bestial',
+    attack: false,
+    type: [],
+    description:
+      'The creature fears fire and gains a Broken Condition if struck by it. It defends only with Dodge. If it loses more than half its Wounds, it will attempt to Flee. If protecting young or Territorial it enters Frenzy instead.',
+  },
+  {
+    name: 'Big',
+    name_br: 'Grande',
+    attack: false,
+    type: ['TRANSFORM'],
+    characteristics_mod: [
+      {
+        short: 'S',
+        value: +10,
+      },
+      {
+        short: 'T',
+        value: +10,
+      },
+      {
+        short: 'Ag',
+        value: -5,
+      },
+    ],
+  },
+  {
+    name: 'Bite',
+    name_br: 'Mordida',
+    attack: true,
+    type: ['Rating'],
+    rating: 0,
+    description:
+      'The creature may make a Free Attack by spending 1 Advantage, inflicting Rating damage.',
+  },
+]
 
 /* Traits
 Afraid (Target)
