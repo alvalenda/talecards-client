@@ -308,6 +308,125 @@ export const traits: Trait[] = [
     description:
       'Can fly as a Move up to Rating yards. It may use fly to Charge. If it starts its turn flying and is unable to still flying, the GM decides how far the creature falls. When targeting it increase range by 1 step. When flying the creature takes –20 to all ranged combat.',
   },
+  {
+    name: 'Frenzy',
+    name_br: 'Fúria',
+    attack: false,
+    types: [],
+    description: 'The creature can Frenzy. See page 190.',
+  },
+  {
+    name: 'Fury',
+    name_br: 'Fúria',
+    attack: false,
+    types: [],
+    description:
+      'Cost: 1 Advantage; Become subject to Hatred to close combat opponents. Cost: 3 Advantage; Become subject to Frenzy, and lose all Advantage.',
+  },
+  {
+    name: 'Ghostly Howl',
+    name_br: 'Uivo Fantasmagórico',
+    attack: false,
+    types: [],
+    description:
+      'Cost: 2 Advantage. The creature howls as Free Attack losing all Advantage. Living targets within I yards gain Deafened 3 Condition and suffer 1d10 Wounds ignoring TB and AP, and must pass an Average (+20) Endurance Test or gain Broken 1 Condition.',
+  },
+  {
+    name: 'Grim',
+    name_br: 'Sinistro',
+    attack: false,
+    types: [['Rating', 0]],
+    description:
+      "At the beginning of the creature's turn if it has less than Rating Advantage, and it is not Surprised or Entangled, its Advantage increases to Rating.",
+  },
+  {
+    name: 'Hardy',
+    name_br: 'Durão',
+    attack: false,
+    types: [],
+    description:
+      'Increase Wounds by a number equal to its TB, applied before any Size modifiers.',
+  },
+  {
+    name: 'Hatred',
+    name_br: 'Ódio',
+    attack: false,
+    types: [['Target', '']],
+    description: 'The creature really hates the Target. See page 190.',
+  },
+  {
+    name: 'Horns',
+    name_br: 'Chifres',
+    attack: false,
+    types: [
+      ['Rating', 0],
+      ['Feature', ''],
+    ],
+    description:
+      'When the creature gains an Advantage for Charging, it may make a Free Attack with its Horns, performed as normal, using Rating to calculate Damage.',
+  },
+  {
+    name: 'Hungry',
+    name_br: 'Faminto',
+    attack: false,
+    types: [],
+    description:
+      'Must pass Average (+20) Willpower Test or eat a fresh or incapacitated body, losing next Move and Action.',
+  },
+  {
+    name: 'Immunity',
+    name_br: 'Imunidade',
+    attack: false,
+    types: [['Type', '']],
+    description:
+      'All Damage of this type, including from a Critical Wound, is ignored.',
+  },
+  {
+    name: 'Immunity to Psychology',
+    name_br: 'Imunidade à Psicologia',
+    attack: false,
+    types: [],
+    description:
+      'The creature is utterly fearless. It ignores the Psychology rules.',
+  },
+  {
+    name: 'Infected',
+    name_br: 'Infectado',
+    attack: false,
+    types: [],
+    description:
+      'If the creature causes Wounds to a living opponent, it must pass an Easy (+40) Endurance Test or contract Festering Wound (page 187).',
+  },
+  {
+    name: 'Infestation',
+    name_br: 'Infestação',
+    attack: false,
+    types: [],
+    description:
+      'The presence of an unusually large number of insects or animals makes All opponents suffer a -10 penalty to hit in melee combat.',
+  },
+  {
+    name: 'Leader',
+    name_br: 'Líder',
+    attack: false,
+    types: [
+      [
+        'TRANSFORM',
+        [
+          ['Fel', +10],
+          ['WP', +10],
+        ],
+      ],
+    ],
+    description: 'The creature receives +10 to Fellowship and Willpower.',
+  },
+  {
+    name: 'Magical',
+    name_br: 'Mágico',
+    attack: false,
+    types: [],
+    description: "The creature's attacks count as Magical.",
+  },
 ]
 
 // ! Página 136 Imperial Zoo - Bestiário
