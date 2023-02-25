@@ -35,3 +35,12 @@ export interface Monster extends Character {
 
 type Notes = string
 type History = string
+
+export type Size =
+  | 'Tiny'
+  | 'Little'
+  | 'Small'
+  | 'Average'
+  | 'Large'
+  | 'Enormous'
+  | 'Monstrous'
