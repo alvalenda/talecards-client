@@ -326,10 +326,10 @@ export const traits: Trait[] = [
   {
     name: 'Ghostly Howl',
     name_br: 'Uivo Fantasmagórico',
-    attack: false,
+    attack: true,
     types: [],
     description:
-      'Cost: 2 Advantage. The creature howls as Free Attack losing all Advantage. Living targets within I yards gain Deafened 3 Condition and suffer 1d10 Wounds ignoring TB and AP, and must pass an Average (+20) Endurance Test or gain Broken 1 Condition.',
+      'Cost: All Advantage, min 2. The creature howls as Free Attack. Living targets within Initiative yards gain Deafened 3 Condition and suffer 1d10 Wounds ignoring TB and AP, and must pass an Average (+20) Endurance Test or gain Broken 1.',
   },
   {
     name: 'Grim',
@@ -357,7 +357,7 @@ export const traits: Trait[] = [
   {
     name: 'Horns',
     name_br: 'Chifres',
-    attack: false,
+    attack: true,
     types: [
       ['Rating', 0],
       ['Feature', ''],
@@ -426,6 +426,108 @@ export const traits: Trait[] = [
     attack: false,
     types: [],
     description: "The creature's attacks count as Magical.",
+  },
+  {
+    name: 'Magic Resistance',
+    name_br: 'Resistência à Magia',
+    attack: false,
+    types: [['Rating', 0]],
+    description:
+      'The SL of any spell affecting the creature is reduced by Rating.',
+  },
+  {
+    name: 'Miracles',
+    name_br: 'Milagres',
+    attack: false,
+    types: [['Various', '']],
+    description:
+      'The creature can enact Miracles; the relevant deity is indicated in brackets.',
+  },
+  {
+    name: 'Night Vision',
+    name_br: 'Visão Noturna',
+    attack: false,
+    types: [],
+    description: 'Roll on the Physical Corruption Table (p. 184).',
+  },
+  {
+    name: 'Painless',
+    name_br: 'Indolor',
+    attack: false,
+    types: [],
+    description:
+      'All non-amputation penalties from Critical Wounds are ignored, although Conditions are suffered as normal.',
+  },
+  {
+    name: 'Petrifying Gaze',
+    name_br: 'Olhar Petrificante',
+    attack: true,
+    types: [['Rating', 0]],
+    description:
+      'Cost: All Advantage, min 1. As an action perform an Opposed BS vs Initiative Test or BS vs Language (Magick) Test, adding 1 SL per Advantage spent. Inflicts Stunned 1 per 2 SL. If it wins by 6+ SL, its target is turned to stone.',
+  },
+  {
+    name: 'Prejudice',
+    name_br: 'Preconceito',
+    attack: false,
+    types: [['Target', '']],
+    description: "The creature just doesn't like the Target. (p. 190)",
+  },
+  {
+    name: 'Ranged',
+    name_br: 'À Distância',
+    attack: true,
+    types: [['Rating', 0]],
+    description:
+      'The creature has a ranged weapon. The weapon does Damage equal to the Rating.',
+  },
+  {
+    name: 'Rear',
+    name_br: 'Coice',
+    attack: true,
+    types: [['Rating', 0]],
+    description:
+      'For its Move, the creature may make a Stomp attack if it is larger than its opponent. Damage is SB+0.',
+  },
+  {
+    name: 'Regenerate',
+    name_br: 'Regenerar',
+    attack: false,
+    types: [['Rating', 0]],
+    description:
+      'At the start of round, regenerate 1d10 Wounds unless you have 0 Wounds remaining. In this case, roll a d10, if the result is 8+ regenerate 1 Wound. Rolling a 10 fully regenerates a Critical Wound. Any Wounds caused by Fire do not regenerate.',
+  },
+  {
+    name: 'Skittish',
+    name_br: 'Arisco',
+    attack: false,
+    types: [],
+    description:
+      'The creature is easily scared by magic or loud noises. If such occurs, it receives Broken 3 Condition.',
+  },
+  {
+    name: 'Spellcaster',
+    name_br: 'Feiticeiro',
+    attack: false,
+    types: [['Various', '']],
+    description:
+      'The creature can cast spells; the specific Lore of Magic will be indicated in brackets.',
+  },
+  {
+    name: 'Stealthy',
+    name_br: 'Furtivo',
+    attack: false,
+    types: [],
+    description:
+      'The creature adds a number equal to its Agility Bonus to the SL of all Stealth Tests.',
+  },
+  {
+    name: 'Size',
+    name_br: 'Tamanho',
+    attack: false,
+    types: [['Size', 'Average']],
+    description:
+      'If 1 Size larger, attacks are Damaging, and successful attacks activate Deathblow. The attacker causes Fear, and wins Opposed Strength Roll unless smaller creature gets a Critical. If 2+ Sizes larger, as above and attacks gain Impact. Multiply Damage by size difference. Causes Terror equal to Size difference. Automatically wins any Opposed Strength Roll. Cost: 1 Advantage. Larger creatures may Stomp smaller creatures. Damage is SB+0. If is smaller, they gain a bonus of +10 to hit. Size effects the number of Wounds a creature has. (p 341)',
   },
 ]
 
