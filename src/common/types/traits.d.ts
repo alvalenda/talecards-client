@@ -1,4 +1,5 @@
 import { CharacteristicShort } from './characteristics'
+import { Size } from './character'
 
 export type Trait = {
   name: TraitName
@@ -55,6 +56,7 @@ type TraitName =
   | 'Infestation'
   | 'Leader'
   | 'Magical'
+  | 'Magic Resistance'
   | 'Miracles'
   | 'Night Vision'
   | 'Painless'
@@ -137,6 +139,7 @@ type TraitNameBR =
   | 'Infestação'
   | 'Líder'
   | 'Mágico'
+  | 'Resistência à Magia'
   | 'Milagres'
   | 'Visão Noturna'
   | 'Indolor'
@@ -179,6 +182,7 @@ type TraitType =
   | ['Various', string]
   | ['Including TB', number]
   | ['Number', number]
+  | ['Size', Size]
   | ['Intensity', 'Minor' | 'Major']
   | ['TRANSFORM', TransformModifier]
 
