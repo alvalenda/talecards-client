@@ -127,7 +127,7 @@ type TraitNameBR =
   | 'Fúria'
   | 'Uivo Fantasmagórico'
   | 'Sinistro'
-  | 'Robusto'
+  | 'Durão'
   | 'Ódio'
   | 'Chifres'
   | 'Faminto'
