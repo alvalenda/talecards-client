@@ -1,5 +1,6 @@
 import { Trait } from '../types/traits'
 
+// * Total Traits number = 80
 export const traits: Trait[] = [
   {
     name: 'Afraid',
@@ -658,7 +659,7 @@ export const traits: Trait[] = [
     attack: false,
     types: [],
     description:
-      'The creature\'s corpus is maintained by foul magics that are inherently unstable in the material realm, ebbing and flowing as battle rages.\n Whenever the creature ends a Round engaged with any opponents with higher Advantage, the creature is driven back and the magics holding it together weaken. It loses as many Wounds as the diference between its own Advantage and the highest Advantage engaged with it. So, if the creature had 1 Advantage, and its opponent had 3, the creature would lose 2 Wounds. If the creature ever reaches 0 Wounds, it makes a Futile (-50) Willpower Test: if it fails, the magics holding it in place collapse, and it "dies". If it scores a Critical, the link to this plane strengthens and the creature immediately regenerates 1d10 Wounds.\n Instability can be avoided if the creatures are controlled by a powerful Wizard or Champion, or if they remain within certain locations where the Unstable Trait has no eﬀect (such as graveyards, haunted houses, etc). Such locations will be listed in a creature\'s profile.',
+      "The creature's corpus is maintained by foul magics that are inherently unstable in the material realm, ebbing and flowing as battle rages.\n Whenever the creature ends a Round engaged with any opponents with higher Advantage, the creature is driven back and the magics holding it together weaken. It loses as many Wounds as the diference between its own Advantage and the highest Advantage engaged with it.\n Instability can be avoided if the creatures are controlled by a powerful Wizard or Champion, or if they remain within certain locations where the Unstable Trait has no eﬀect (such as graveyards, haunted houses, etc). Such locations will be listed in a creature's profile.",
   },
   {
     name: 'Vampiric',
@@ -725,86 +726,4 @@ export const traits: Trait[] = [
   },
 ]
 
-// ! Página 136 - Bestiário
-/* Traits
-Afraid (Target)
-Amphibious
-Arboreal
-Animosity (Target)
-Armour (Rating)(Including TB)
-Belligerent
-Bestial
-Big
-Bite (Rating)
-Blessed (Various)
-Bounce
-Breath (Rating)(Type)
-Brute
-Champion
-Chill Grasp
-Clever
-Cold-blooded
-Constrictor
-Construct
-Corrosive Blood
-Corruption
-Cunning
-Dark Vision
-Daemonic (Target)
-Die Hard
-Disease (Type)
-Distracting
-Elite
-Ethereal
-Fast
-Fear (Rating)
-Flight (Rating)
-Frenzy
-Fury
-Ghostly Howl
-Grim (Rating)
-Hardy
-Hatred (Target)
-Horns (Rating)(Feature)
-Hungry
-Immunity (Type)
-Immunity to
-Psychology
-Infected
-Infestation
-Leader
-Magical
-Miracles (various)
-Night Vision
-Painless
-Petrifying Gaze
-Prejudice (Target)
-Ranged (Rating)
-Rear
-Regenerate
-Skittish
-Spellcaster
-Stealthy
-Size
-Stride
-Stupid
-Swamp-strider
-Swarm
-Tail Attack (Rating)
-# Tentacles (Rating)
-Territorial
-Terror (Rating)
-Trained
-Tongue Attack (Rating)(Range)
-Tough
-Tracker
-Undead
-Unstable
-Vampiric
-Venom (Difficulty)
-Vomit
-Ward (Rating)
-Wall crawler
-Weapon (Rating)
-Web (Rating)
-                        */
+// TODO Página 7 - Bestiário Não Oficial
