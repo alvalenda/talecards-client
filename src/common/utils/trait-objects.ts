@@ -464,7 +464,7 @@ export const traits: Trait[] = [
     attack: true,
     types: [['Rating', 0]],
     description:
-      'Cost: All Advantage, min 1. As an action perform an Opposed BS vs Initiative Test or BS vs Language (Magick) Test, adding 1 SL per Advantage spent. Inflicts Stunned 1 per 2 SL. If it wins by 6+ SL, its target is turned to stone.',
+      'Cost: All Advantage, min 1. As an action perform an Opposed BS vs Initiative Test or BS vs Language (Magia) Test, adding 1 SL per Advantage spent. Inflicts Stunned 1 per 2 SL. If it wins by 6+ SL, its target is turned to stone.',
   },
   {
     name: 'Prejudice',
@@ -643,6 +643,85 @@ export const traits: Trait[] = [
     attack: false,
     types: [],
     description: 'The creature adds SL equal to their IB to all Track Tests.',
+  },
+  {
+    name: 'Undead',
+    name_br: 'Morto-vivo',
+    attack: false,
+    types: [],
+    description:
+      'The Undead are neither living, nor dead, meaning they are not reliant on the usual prerequisites for life: air, food, water... They do not suﬀer Exposure eﬀects and are immune to the following Conditions: Bleeding, Fatigued, Poisoned, Stunned, Unconscious. This Trait commonly comes into use when spells, miracles, or other abilities aﬀect Undead only.',
+  },
+  {
+    name: 'Unstable',
+    name_br: 'Instável',
+    attack: false,
+    types: [],
+    description:
+      'The creature\'s corpus is maintained by foul magics that are inherently unstable in the material realm, ebbing and flowing as battle rages.\n Whenever the creature ends a Round engaged with any opponents with higher Advantage, the creature is driven back and the magics holding it together weaken. It loses as many Wounds as the diference between its own Advantage and the highest Advantage engaged with it. So, if the creature had 1 Advantage, and its opponent had 3, the creature would lose 2 Wounds. If the creature ever reaches 0 Wounds, it makes a Futile (-50) Willpower Test: if it fails, the magics holding it in place collapse, and it "dies". If it scores a Critical, the link to this plane strengthens and the creature immediately regenerates 1d10 Wounds.\n Instability can be avoided if the creatures are controlled by a powerful Wizard or Champion, or if they remain within certain locations where the Unstable Trait has no eﬀect (such as graveyards, haunted houses, etc). Such locations will be listed in a creature\'s profile.',
+  },
+  {
+    name: 'Vampiric',
+    name_br: 'Vampírico',
+    attack: false,
+    types: [],
+    description:
+      'Whenever the creature performs a successful Bite attack against an appropriate opponent, it heals as many Wounds as its opponent loses. Drinking blood in this way is the only way it can heal.',
+  },
+  {
+    name: 'Venom',
+    name_br: 'Venenoso',
+    attack: false,
+    types: [['Difficult', 'Desafiadora']],
+    description:
+      'When the creature causes Wounds, its opponent gains a Poisoned Condition. If no Difficulty is marked to resist the Venom, it is assumed to be Challenging (p 169).',
+  },
+  {
+    name: 'Vomit',
+    name_br: 'Vômito',
+    attack: false,
+    types: [],
+    description:
+      "Cost: 3 Advantage. As a Free Attack, choose 1 target the creature can see within TB yards; all chosen creatures within two yards are also hit. The creature performs an Opposed Test BS vs Dodge against all affected targets. The Test is typically Easy (+40) for the vomiting creature, due to the close range, and Challenging (+0) for opponents. Targets hit suffer Damage equal to creature's TB+4 and receive Stunned 1 Condition. Armour and Weapons carried by targets suffer 1 Damage",
+  },
+  {
+    name: 'Ward',
+    name_br: 'Protegido',
+    attack: false,
+    types: [['Rating', 0]],
+    description:
+      'Roll 1d10 after any blow is received, if the creature rolls Rating or higher, the blow is ignored.',
+  },
+  {
+    name: 'Wallcrawler',
+    name_br: 'Escalador',
+    attack: false,
+    types: [],
+    description:
+      'Moves at full Movement across any appropriate wall or ceiling, and automatically pass all Climb Tests.',
+  },
+  {
+    name: 'Warpstone Weapon',
+    name_br: 'Arma Corruptora',
+    attack: false,
+    types: [],
+    description:
+      'Warpstone is the materialization of Chaos and its presence is deeply corrupting. Weapons made from or deploying warpstone will often mutate and corrupt their targets. An attack from such a weapon has the Corruption (Moderate) and Magical Traits.',
+  },
+  {
+    name: 'Weapon',
+    name_br: 'Arma',
+    attack: true,
+    types: [['Rating', 0]],
+    description: 'Make a melee attack, causing Damage equal to Rating.',
+  },
+  {
+    name: 'Web',
+    name_br: 'Teia',
+    attack: true,
+    types: [['Rating', 0]],
+    description:
+      'Whenever the creature successfully hits, opponents gain Entangled 1 status, with a Strength of the Rating given (p 168.)',
   },
 ]
 

@@ -1,3 +1,4 @@
+import { Difficulties, TestDifficult } from '../utils/test-objects'
 import { CharacteristicShort } from './attributes'
 import { Size } from './character'
 
@@ -87,7 +88,8 @@ type TraitName =
   | 'Venom'
   | 'Vomit'
   | 'Ward'
-  | 'WallCrawler'
+  | 'Wallcrawler'
+  | 'Warpstone Weapon'
   | 'Weapon'
   | 'Web'
 
@@ -164,17 +166,19 @@ type TraitNameBR =
   | 'Linguada'
   | 'Tenaz'
   | 'Rastreador'
-  | 'Morto-Vivo'
+  | 'Morto-vivo'
   | 'Instável'
   | 'Vampírico'
   | 'Venenoso'
   | 'Vômito'
   | 'Protegido'
   | 'Escalador'
+  | 'Arma Corruptora'
   | 'Arma'
   | 'Teia'
 
 type TraitType =
+  | ['Difficult', Difficulties]
   | ['Feature', string]
   | ['Rating', number]
   | ['Range', number]
@@ -267,7 +271,7 @@ Vampiric
 Venom (Difficulty)
 Vomit
 Ward (Rating)
-Wall crawler
+Wallcrawler
 Weapon (Rating)
 Web (Rating)
                         */
