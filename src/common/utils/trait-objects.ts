@@ -529,9 +529,124 @@ export const traits: Trait[] = [
     description:
       'If 1 Size larger, attacks are Damaging, and successful attacks activate Deathblow. The attacker causes Fear, and wins Opposed Strength Roll unless smaller creature gets a Critical. If 2+ Sizes larger, as above and attacks gain Impact. Multiply Damage by size difference. Causes Terror equal to Size difference. Automatically wins any Opposed Strength Roll. Cost: 1 Advantage. Larger creatures may Stomp smaller creatures. Damage is SB+0. If is smaller, they gain a bonus of +10 to hit. Size effects the number of Wounds a creature has. (p 341)',
   },
+  {
+    name: 'Stride',
+    name_br: 'Passo Largo',
+    attack: false,
+    types: [],
+    description: 'Multiply Run Movement by 1.5 when Running.',
+  },
+  {
+    name: 'Stupid',
+    name_br: 'Estúpido',
+    attack: false,
+    types: [],
+    description:
+      'If creature is near allies without Stupid, ignore this trait. Otherwise, it must pass an Easy (+40) Intelligence Test at the start of each round. If it fails, it loses both its Move and Action for that Turn.',
+  },
+  {
+    name: 'Swamp-strider',
+    name_br: 'Pantaneiro',
+    attack: false,
+    types: [],
+    description:
+      'The creature suffers no Movement penalties for moving through boggy ground.',
+  },
+  {
+    name: 'Swarm',
+    name_br: 'Enxame',
+    attack: false,
+    types: [
+      [
+        'TRANSFORM',
+        [
+          ['WS', +10],
+          ['W', 'x5'],
+        ],
+      ],
+    ],
+    description:
+      'O Enxame conta como uma única Criatura. Ele ignora as regras de Psicologia e Engajamento. Ataques bem-sucedidos ativam Golpe Mortal. Todos os oponentes Engajados sofrem 1 Ferimento ao final de cada Rodada. O Enxame tem 5x os Ferimentos de uma criatura normal e +10 WS. Ataques à distância contra ele ganham +40 para acertar. Ignore todas as regras do Traço Tamanho.',
+  },
+  {
+    name: 'Tail Attack',
+    name_br: 'Caudada',
+    attack: true,
+    types: [['Rating', 0]],
+    description:
+      'Custo: 1 Vantagem. Ataque com a Cauda como um Ataque Livre, causa Rating de Dano. Oponentes menores que sofrerem pelo menos 1 Ferimento também ganham a Condição Derrubado.',
+  },
+  {
+    name: 'Tentacles',
+    name_br: 'Tentáculos',
+    attack: true,
+    types: [
+      ['Number', 0],
+      ['Rating', 0],
+    ],
+    description:
+      "The creature has # tentacles. It gains one Free Attack Action per tentacle, which does Rating damage. If it Wounds an opponent, it inflicts an Entangled Condition and that tentacle Grapples the target. If a tentacle is Grappling, use the tentacle's Free Attack Action to resolve that Grapple (p 338)",
+  },
+  {
+    name: 'Territorial',
+    name_br: 'Territorial',
+    attack: false,
+    types: [],
+    description:
+      'This creature will fight to the death to protect its territory, and will not pursue enemies if they flee this area.',
+  },
+  {
+    name: 'Terror',
+    name_br: 'Abençoado',
+    attack: false,
+    types: [['Rating', 0]],
+    description:
+      'The creature causes Terror. Targets must pass a Cool Test or gain Broken Condition. (p 191)',
+  },
+  {
+    name: 'Trained',
+    name_br: 'Treinado',
+    attack: false,
+    types: [['Various', '']],
+    description:
+      'Train a animal in one of the follow abilities: Broken, Drive, Entertain, Fetch, Guard, Home, Magic, Mount or War.',
+  },
+  {
+    name: 'Tongue Attack',
+    name_br: 'Linguada',
+    attack: true,
+    types: [
+      ['Rating', 0],
+      ['Range', 0],
+    ],
+    description:
+      'Cost: 1 Advantage. Make a Free ranged Attack. Inflicts Rating Damage. If hit, target receives 1 Entangled Condition. If smaller, it is dragged to the creature and becomes Engaged. The creature may then either release the target, perform a Free Attack using its Weapon Trait, or initiate a Grapple (p 163).',
+  },
+  {
+    name: 'Tough',
+    name_br: 'Tenaz',
+    attack: false,
+    types: [
+      [
+        'TRANSFORM',
+        [
+          ['T', +10],
+          ['WP', +10],
+        ],
+      ],
+    ],
+    description: 'The creature receives +10 Toughness and Willpower.',
+  },
+  {
+    name: 'Tracker',
+    name_br: 'Rastreador',
+    attack: false,
+    types: [],
+    description: 'The creature adds SL equal to their IB to all Track Tests.',
+  },
 ]
 
-// ! Página 136 Imperial Zoo - Bestiário
+// ! Página 136 - Bestiário
 /* Traits
 Afraid (Target)
 Amphibious
