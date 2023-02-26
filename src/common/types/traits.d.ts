@@ -1,4 +1,4 @@
-import { CharacteristicShort } from './characteristics'
+import { CharacteristicShort } from './attributes'
 import { Size } from './character'
 
 export type Trait = {
@@ -154,16 +154,16 @@ type TraitNameBR =
   | 'Tamanho'
   | 'Passo Largo'
   | 'Estúpido'
-  | 'Andar Pântano'
+  | 'Pantaneiro'
   | 'Enxame'
-  | 'Ataque Cauda'
+  | 'Caudada'
   | 'Tentáculos'
   | 'Territorial'
   | 'Terror'
   | 'Treinado'
-  | 'Ataque Língua'
+  | 'Linguada'
   | 'Tenaz'
-  | 'Pistoleiro'
+  | 'Rastreador'
   | 'Morto-Vivo'
   | 'Instável'
   | 'Vampírico'
@@ -177,6 +177,7 @@ type TraitNameBR =
 type TraitType =
   | ['Feature', string]
   | ['Rating', number]
+  | ['Range', number]
   | ['Target', string]
   | ['Type', string]
   | ['Various', string]
@@ -186,7 +187,7 @@ type TraitType =
   | ['Intensity', 'Minor' | 'Major']
   | ['TRANSFORM', TransformModifier]
 
-type TransformModifier = [CharacteristicShort | 'M' | 'W', number][]
+type TransformModifier = [CharacteristicShort | 'M' | 'W', number | string][]
 
 /* Traits
 Afraid (Target)
